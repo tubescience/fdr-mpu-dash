@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freedom Debt Relief — The MPU Mystery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
+<style>
+:root{
+  --bg:#EEF2F3; --bg-alt:#FFFFFF; --dark:#0B2A36; --dark-alt:#123B4A;
+  --accent:#16A6A6; --accent-soft:#7FC9C9; --accent-deep:#0E7C8B;
+  --ink:#0E1A1F; --ink-soft:#38474D; --muted:#6B7B80; --border:#D5DEE0;
+  --pos:#1E9E6A; --neg:#C0392B; --warn:#D98A2B; --white:#fff;
+  --radius:12px; --radius-sm:8px; --gap:20px; --shadow:0 1px 3px rgba(11,42,54,.07),0 6px 22px rgba(11,42,54,.05);
+}
+*{box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;margin:0;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-weight:800;letter-spacing:-.025em;margin:0}
+h1{font-size:40px;letter-spacing:-.035em;line-height:1.08}
+h2{font-size:26px;letter-spacing:-.03em}
+h3{font-size:18px}
+p{margin:.5em 0}
+a{color:var(--accent-deep)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+section{padding:40px 0;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent-deep);margin-bottom:8px}
+.lead{font-size:17px;color:var(--ink-soft);max-width:860px}
+[id]{scroll-margin-top:70px}
+
+/* gate */
+#gate{position:fixed;inset:0;background:var(--dark);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:999;padding:24px;text-align:center}
+#gate *{background:transparent}
+#gate .logo{font-size:30px;font-weight:900;letter-spacing:-.03em}
+#gate .logo span{color:var(--accent-soft)}
+#gate .sub{color:rgba(255,255,255,.65);margin:12px 0 22px;max-width:440px;font-size:14px;line-height:1.5}
+#gate input{padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;width:280px;font-size:15px;outline:none}
+#gate button{margin-top:12px;padding:11px 26px;border:none;border-radius:8px;background:var(--accent);color:#042027;font-weight:800;font-size:15px;cursor:pointer}
+#gate .err{color:#ff9b8f;margin-top:12px;font-size:13px;min-height:16px}
+#app{display:none}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:var(--dark);padding:0 24px;display:flex;align-items:center;gap:22px;height:56px;box-shadow:0 2px 8px rgba(0,0,0,.15);overflow-x:auto}
+.nav .brand{color:#fff;font-weight:900;font-size:15px;letter-spacing:-.02em;white-space:nowrap}
+.nav .brand span{color:var(--accent-soft)}
+.nav a{color:rgba(255,255,255,.72);text-decoration:none;font-size:13px;font-weight:600;white-space:nowrap;transition:color .15s}
+.nav a:hover{color:#fff}
+
+/* hero */
+.hero{background:linear-gradient(160deg,var(--dark),var(--dark-alt));color:#fff;padding:54px 0 46px}
+.hero h1{color:#fff;max-width:900px}
+.hero .lead{color:rgba(255,255,255,.8);margin-top:16px}
+.tagchip{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:12px;font-weight:700;padding:5px 11px;border-radius:999px;margin-right:8px;margin-top:14px}
+
+/* kpi */
+.kpi-row{display:flex;gap:14px;margin:8px 0 0;flex-wrap:wrap}
+.kpi-card{flex:1;min-width:150px;background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 18px;box-shadow:var(--shadow)}
+.kpi-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px}
+.kpi-value{font-size:28px;font-weight:900;letter-spacing:-.03em}
+.kpi-sub{font-size:12px;color:var(--muted);margin-top:2px}
+.kpi-value.pos{color:var(--pos)} .kpi-value.neg{color:var(--neg)} .kpi-value.acc{color:var(--accent-deep)}
+
+/* bluf */
+.bluf{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.meta-card{background:var(--bg-alt);border:1px solid var(--border);border-left:5px solid var(--accent);border-radius:var(--radius-sm);padding:18px 20px;box-shadow:var(--shadow)}
+.meta-card.p0{border-left-color:var(--neg)}
+.meta-card .ttl{font-weight:800;font-size:15px;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.meta-card p{font-size:14px;color:var(--ink-soft);margin:0}
+.ptag{font-size:10px;font-weight:800;padding:2px 8px;border-radius:999px;letter-spacing:.04em;text-transform:uppercase}
+.ptag.p0{background:#fbe5e2;color:var(--neg)} .ptag.p1{background:#e3f3ee;color:var(--pos)} .ptag.p2{background:#e6f0f2;color:var(--accent-deep)}
+
+/* callout */
+.callout{background:#fff6 ;border:1px solid var(--warn);background:#FCF4E8;border-radius:var(--radius-sm);padding:18px 20px;margin:22px 0;display:flex;gap:14px;align-items:flex-start}
+.callout .ic{font-size:22px;flex-shrink:0}
+.callout .t{font-weight:800;color:#9a5e10;margin-bottom:4px;font-size:14px;text-transform:uppercase;letter-spacing:.04em}
+.callout p{font-size:14px;color:var(--ink-soft);margin:0}
+
+/* charts */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.card h3{margin-bottom:4px}
+.card .sub{font-size:13px;color:var(--muted);margin-bottom:10px}
+.chart-wrap{position:relative;width:100%}
+.chart-wrap canvas{width:100%!important;height:100%!important}
+
+/* table */
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border)}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700}
+td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+td.pos{color:var(--pos)} td.neg{color:var(--neg)}
+
+/* scorecard */
+.score td .v{font-weight:800}
+.v-ok{color:var(--pos)} .v-warn{color:var(--warn)} .v-bad{color:var(--neg)}
+
+/* ad grid */
+.ad-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;grid-auto-rows:1fr}
+@media(max-width:1100px){.ad-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.ad-grid{grid-template-columns:1fr}.bluf{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}}
+.ad-card{display:flex;flex-direction:column;background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.card-media{width:100%;height:300px;background:#06212B;object-fit:contain;display:block;flex-shrink:0}
+.ad-meta{padding:14px 15px;display:flex;flex-direction:column;gap:9px;flex:1 1 auto;min-height:0}
+.role-badge{font-size:11px;font-weight:800;padding:4px 9px;border-radius:6px;align-self:flex-start;letter-spacing:.02em}
+.rb-engine{background:#0B2A36;color:#7FC9C9} .rb-win{background:#e3f3ee;color:var(--pos)} .rb-neutral{background:#eef0ef;color:var(--ink-soft)} .rb-loss{background:#fbe9e6;color:var(--neg)} .rb-kill{background:#C0392B;color:#fff}
+.ad-name{font-size:11px;color:var(--muted);font-family:ui-monospace,monospace;word-break:break-all;line-height:1.35}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px 10px}
+.stat{font-size:12px;color:var(--muted)}
+.stat b{display:block;font-size:14px;color:var(--ink);font-weight:800;font-variant-numeric:tabular-nums}
+.stat b.pos{color:var(--pos)} .stat b.neg{color:var(--neg)}
+.pills{display:flex;flex-wrap:wrap;gap:5px}
+.pill{font-size:10px;font-weight:700;padding:3px 8px;border-radius:999px;background:#E8EFF0;color:var(--accent-deep)}
+.pill.anchor{background:#F0EAF7;color:#6a4a99}
+.hookbox{font-size:11px;color:var(--ink-soft);background:#F5F8F8;border:1px solid var(--border);border-radius:6px;padding:8px 10px;line-height:1.45;max-height:88px;overflow-y:auto;min-height:0}
+.hookbox .sp{color:var(--accent-deep);font-weight:700} .hookbox .os{color:#9a5e10;font-weight:700}
+
+/* recs */
+.rec{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 18px;margin-bottom:12px;box-shadow:var(--shadow);border-left:5px solid var(--accent)}
+.rec.p0{border-left-color:var(--neg)} .rec.p3{border-left-color:var(--muted)}
+.rec .h{font-weight:800;font-size:15px;display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.rec p{font-size:14px;color:var(--ink-soft);margin:0}
+.rec .ann{font-size:12px;color:var(--accent-deep);font-weight:600;margin-top:6px}
+
+.foot{font-size:12.5px;color:var(--muted);line-height:1.6}
+.foot b{color:var(--ink-soft)}
+.tier{font-size:10px;font-weight:800;padding:1px 6px;border-radius:4px;background:#E8EFF0;color:var(--accent-deep);vertical-align:middle}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="logo">Freedom Debt Relief · <span>MPU</span></div>
+  <div class="sub">Internal TubeScience strategy analysis. Confidential — contains creative performance and margin data.<br>Enter the shared passphrase to continue.</div>
+  <input id="pw" type="password" placeholder="Passphrase" autocomplete="off">
+  <button onclick="tryUnlock()">Unlock</button>
+  <div class="err" id="err"></div>
+</div>
+
+<div id="app">
+  <div class="nav">
+    <div class="brand">FDR · <span>MPU Mystery</span></div>
+    <a href="#bluf">BLUF</a>
+    <a href="#drivers">What drives MPU</a>
+    <a href="#anchor">Anchor test</a>
+    <a href="#levers">Creative levers</a>
+    <a href="#concentration">One ad deep</a>
+    <a href="#cpl">Cheap-CPL trap</a>
+    <a href="#evidence">Playable evidence</a>
+    <a href="#recs">Recommendations</a>
+    <a href="#method">Method</a>
+  </div>
+
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow" style="color:var(--accent-soft)">Creative Strategy · YTD Portfolio · 215 assets · $1.93M</div>
+      <h1>MPU is a conversion problem<br>disguised as a targeting problem.</h1>
+      <p class="lead">The #revenue-freedom analysis concluded the on-screen debt anchor "IS the targeting." The full dataset says the number a creative shows moves the lead's <em>credit profile</em> — but not its <em>margin</em>. What moves MPU is <strong>CPA</strong>, and CPA is <strong>CPL ÷ close-rate</strong>. The lever is lead→enrollment conversion, not the dollar on screen.</p>
+      <div>
+        <span class="tagchip">MPU ≈ 0.10 × ABI − CPA (r = 0.945)</span>
+        <span class="tagchip">CPA↔MPU −0.72 · close-rate↔MPU +0.62 · ABI↔MPU −0.003</span>
+        <span class="tagchip">Net YTD margin +$82k · J521V1B = 71% of it</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="bluf"><div class="wrap">
+    <div class="eyebrow">Bottom line up front</div>
+    <h2>Three conclusions a busy reader can take in 30 seconds</h2>
+    <div class="kpi-row" id="kpiRow"></div>
+    <div class="bluf">
+      <div class="meta-card p0">
+        <div class="ttl"><span class="ptag p0">Priority 0</span> The account is one ad deep.</div>
+        <p>Net YTD margin is +$82k and <strong>J521V1B alone is +$58k (≈71%)</strong>. Defending and cloning that one asset before it fatigues is more urgent than any optimization. The flashy high-MPU ads (J737 +5,786, J679A +4,348) are 2–4-close noise.</p>
+      </div>
+      <div class="meta-card">
+        <div class="ttl"><span class="ptag p1">Priority 1</span> Build for close rate, not the anchor.</div>
+        <p>On the signal cohort, MPU tracks <strong>CPA (−0.72)</strong> and <strong>close rate (+0.62)</strong>; <strong>ABI/debt size is flat (−0.003)</strong>. The #1 ad shows no debt figure; a textbook "prime profile" ad (FICO 623) lost $11k on a 4% close. The recipe that wins is structural, not numeric.</p>
+      </div>
+      <div class="meta-card">
+        <div class="ttl"><span class="ptag p1">Priority 1</span> The winning recipe is a conversion recipe.</div>
+        <p><strong>MoF · Before-After hook · outcome / "simplify &amp; protect" frame · authentic peer or real-graduate voice · video.</strong> Curiosity-Gap and Testimonial-Lead hooks, sustained crisis/shame framing, and text statics are MPU-negative.</p>
+      </div>
+      <div class="meta-card">
+        <div class="ttl"><span class="ptag p2">Priority 2</span> Stop chasing cheap CPL.</div>
+        <p>Cheap leads close <em>worse</em> (4.7% vs 7.6%) and the low-CPL cohort <strong>lost $8k</strong> while pricier leads made +$113k. CPL is uncorrelated with margin (r = −0.02). The Q1 "drive CPL down / scale statics" instinct was margin-negative.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="drivers"><div class="wrap">
+    <div class="eyebrow">The central finding</div>
+    <h2>What actually moves MPU</h2>
+    <p class="lead">Correlation of each driver with MPU on the signal cohort (ads with ≥5 closes, n=27, 85% of spend). <span class="tier">T1</span> Descriptive.</p>
+    <div class="card" style="margin-top:18px">
+      <h3>Driver correlation with MPU</h3>
+      <div class="sub">Green = higher value lifts MPU · Red = higher value lowers MPU · the bars near zero (ABI, CPL) are the levers the prior analysis bet on.</div>
+      <div class="chart-wrap" style="height:340px"><canvas id="cDrivers"></canvas></div>
+    </div>
+    <p class="lead" style="margin-top:16px"><strong>CPA varies 2.6× more than the debt term and is the only thing that tracks MPU.</strong> CPA = CPL ÷ close rate (CPA↔close-rate −0.60), so MPU is made or lost in the lead→enrollment step — a trust/qualification problem creative influences through intent and expectation-setting, not through the size of the on-screen number. <span class="tier">T2</span></p>
+  </div></section>
+
+  <section id="anchor"><div class="wrap">
+    <div class="eyebrow">Testing the headline thesis</div>
+    <h2>The debt anchor moves the profile — but not the margin</h2>
+    <div class="grid2" style="margin-top:18px">
+      <div class="card">
+        <h3>The anchor shifts who you attract…</h3>
+        <div class="sub">Correlation of the on-screen lead $ figure with each outcome (cohort, n=14 with a detectable anchor).</div>
+        <div class="chart-wrap" style="height:240px"><canvas id="cAnchor"></canvas></div>
+        <p style="font-size:13px;color:var(--ink-soft);margin-top:10px">A bigger number reliably pulls higher FICO and lower utilization — exactly as the Slack read claimed. That link is real.</p>
+      </div>
+      <div class="card">
+        <h3>…but the profile shift doesn't pay</h3>
+        <div class="sub">Mean MPU by anchor size.</div>
+        <div class="chart-wrap" style="height:240px"><canvas id="cAnchorMpu"></canvas></div>
+        <p style="font-size:13px;color:var(--ink-soft);margin-top:10px">High-anchor ads (≥$30k) averaged <strong style="color:var(--neg)">−$143 MPU</strong>; lower-anchor averaged <strong style="color:var(--pos)">+$131</strong>. Higher-FICO leads have other options (balance transfer, consolidation, DIY) and close worse — raising CPA and cancelling the higher ABI.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="ic">⚠️</div>
+      <div>
+        <div class="t">Before briefing the debt anchor as "the lever"</div>
+        <p>The chain "anchor → prime profile → high MPU" breaks at the last link. Briefing teams to raise on-screen numbers will shift the credit profile but is unlikely to lift margin — and may lower it. The exception that proves it: <strong>J521V1B (+$58k) leads with no anchor at all</strong>, while <strong>J655V1A</strong> ("viral for over $40,000") had the prime profile and <strong>lost $11k</strong>. Validate at adset level before acting. <span class="tier">T2</span></p>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="levers"><div class="wrap">
+    <div class="eyebrow">The actionable layer</div>
+    <h2>Which creative attributes carry margin</h2>
+    <p class="lead">Close-weighted MPU on the signal cohort (closes ≥3, groups with ≥6 closes) = total margin ÷ closes, the correct aggregate for a per-enrollment metric. <span class="tier">T2</span> (creative tags are AI-classified).</p>
+    <div class="grid2" style="margin-top:18px">
+      <div class="card"><h3>Funnel stage</h3><div class="sub">MoF is the entire profit center; BoF loses (robust ex-J521: MoF still +$102).</div><div class="chart-wrap" style="height:200px"><canvas id="cFunnel"></canvas></div></div>
+      <div class="card"><h3>Hook archetype</h3><div class="sub">Before-After dominates; Curiosity-Gap (most-used, 13 ads) and Testimonial-Lead lose.</div><div class="chart-wrap" style="height:240px"><canvas id="cHook"></canvas></div></div>
+      <div class="card"><h3>Voice type</h3><div class="sub">Authentic peer &amp; real-graduate voices beat produced actors.</div><div class="chart-wrap" style="height:240px"><canvas id="cVoice"></canvas></div></div>
+      <div class="card"><h3>Asset type</h3><div class="sub">Video is the workhorse; statics net-negative (the one winner is J641, the J521 message as a cartoon).</div><div class="chart-wrap" style="height:160px"><canvas id="cType"></canvas></div></div>
+    </div>
+    <p class="lead" style="margin-top:18px"><strong>MPU-positive profile:</strong> MoF · Before-After hook · outcome/relief "simplify &amp; protect" frame · authentic peer or real-graduate voice · Elevated-Native / Produced-TS-Hybrid video. &nbsp;<strong>MPU-negative:</strong> Curiosity-Gap or Testimonial-Lead hook · sustained crisis/shame frame · produced actor or pure-native text static · BoF.</p>
+    <p class="lead" style="margin-top:8px"><strong>Motivator caveat <span class="tier">T3</span>:</strong> M-OUTCOME shows +267 vs M-PROBLEM +65, but the entire gap is J521 (ex-J521 they tie). The portfolio is 198 problem / 17 outcome — so outcome-relief framing is a <em>radically under-tested high-upside lane</em>, not a proven win.</p>
+  </div></section>
+
+  <section id="concentration"><div class="wrap">
+    <div class="eyebrow">Volume × MPU = total margin</div>
+    <h2>The risk the per-unit view hides: it's one ad deep</h2>
+    <p class="lead">MPU is per-enrollment; the P&amp;L is MPU × close volume. Total margin by asset (top winners and losers). <span class="tier">T1</span></p>
+    <div class="card" style="margin-top:18px">
+      <h3>Total margin by asset (MPU × closes)</h3>
+      <div class="sub">J521V1B is ~71% of net margin and ~half of closes-weighted profit. Optimizing per-unit MPU while the volume base evaporates is the wrong fight.</div>
+      <div class="chart-wrap" style="height:420px"><canvas id="cLeaders"></canvas></div>
+    </div>
+  </div></section>
+
+  <section id="cpl"><div class="wrap">
+    <div class="eyebrow">Reframing Q1</div>
+    <h2>The cheap-CPL trap</h2>
+    <p class="lead">Through Feb–April the team leaned toward lower-CPL, broad-appeal assets and "scale statics." For margin, that was the wrong move. Cheaper leads closed worse and lost money. <span class="tier">T2</span> (n=6 low-CPL — directional).</p>
+    <table>
+      <thead><tr><th>Cohort</th><th class="num">Ads</th><th class="num">Close rate</th><th class="num">Avg utilization</th><th class="num">Total margin</th></tr></thead>
+      <tbody id="cplBody"></tbody>
+    </table>
+    <p class="foot" style="margin-top:12px">corr(CPL, close-rate) = <b id="cc1"></b> (cheaper leads close worse) · corr(CPL, MPU) = <b id="cc2"></b> (CPL is unrelated to margin). The client already intuits this — in May they said they're "okay to pay more for leads as long as it's backed by high MPU." <strong>Judge creative on close rate and total margin, not CPL.</strong></p>
+  </div></section>
+
+  <section id="evidence"><div class="wrap">
+    <div class="eyebrow">Playable evidence</div>
+    <h2>The assets behind the numbers</h2>
+    <p class="lead">Top margin-makers and the instructive losers, pulled from the source export. Hover/scrub to play. "Anchor" = whether the ad leads with an on-screen debt figure.</p>
+    <div class="ad-grid" id="adGrid" style="margin-top:20px"></div>
+  </div></section>
+
+  <section id="recs"><div class="wrap">
+    <div class="eyebrow">Recommendations (post-roundtable synthesis)</div>
+    <h2>What to do, prioritized by total-margin impact</h2>
+    <div style="margin-top:18px">
+      <div class="rec p0"><div class="h"><span class="ptag p0">P0</span> Defend the engine (MORE)</div><p>Protect <strong>J521V1B</strong> from unmanaged fatigue and refresh the exact recipe across new pages/placements before decay. Scale the proven adjacent family: <strong>J568V1D, J679V1D, J641V1B</strong>. This is risk management — the account's margin sits on one asset.</p></div>
+      <div class="rec"><div class="h"><span class="ptag p1">P1</span> Clone into a structured MoF Before-After family</div><p>3× J521-family MORE/ADAPT (new capable-peer talent, new openers, same "3 payments → 1 / no loans" body, buildable from existing footage) + 1× cartoon-Before-After static (J641 mold). Retire Curiosity-Gap and Testimonial-Lead as lead hooks.</p><div class="ann">[Excavator] Every MoF asset must carry an in-frame, sound-off-legible trust beat — "no loans," "no upfront costs," real-graduate credibility. That is the close-rate mechanism (J568 already does this).</div></div>
+      <div class="rec"><div class="h"><span class="ptag p2">P2</span> Two clearly-separated volume / test lanes</div><p><strong>ToF native-volume lane</strong> (POV/organic, J737 mold) judged on whether it <em>feeds MoF closes</em>, not standalone MPU. Plus an <strong>outcome-led OS test cell</strong> (best ad is outcome-motivated; only 17/215 ads are) and an isolated calculator-default test (J699 — expect a profile shift more than an MPU shift).</p><div class="ann">[Antenna] Don't starve the top of the funnel the profit engine depends on. [Architect] Size it as a 2-week grid with build-feasibility tagged.</div></div>
+      <div class="rec p3"><div class="h"><span class="ptag p2">P3</span> Bound creative's role &amp; pair with media</div><p>Creative moves lead intent, expectation-setting, and qualification (lifts close rate to a point); it cannot move the sales floor, the LP, or the optimization event. Pair this plan with the media asks already circulating: a high-MPU optimization event, third-party/whitelist pages (NY Post), and restored activation cadence.</p><div class="ann">[Challenger] The existential issue is volume/activation — creative MPU work is necessary but not sufficient. Sell it that way.</div></div>
+      <div class="rec p3"><div class="h">Kill / don't-touch</div><p><strong>Kill J742V1D</strong> (shame static, worst loser, util 90%) and confession/Reddit statics (<strong>J718V1B</strong>). Rework the <strong>funnel/offer</strong> behind <strong>J655V1A</strong>, not its targeting. Reallocate BoF capacity to MoF. Leave <strong>J753V1D</strong> alone — already +$167 MPU profitable.</p></div>
+    </div>
+  </div></section>
+
+  <section id="method" style="border-bottom:none"><div class="wrap">
+    <div class="eyebrow">Methodology, confidence &amp; limitations</div>
+    <h2>How this was built — and what would raise confidence</h2>
+    <p class="foot" style="margin-top:14px">
+      <b>Source &amp; grain.</b> <code>Launches-freedom-financial-2026-06-02_classified.xlsx</code>, YTD, ad-variant level (215 unique assets) merged with Sam's MPU/profile passback. <b>MPU</b> = margin per enrollment ≈ <b>0.10 × ABI − CPA</b> (validated, r = 0.945; reproduces the Feb #revenue-freedom zone reports). <b>CPA here is cost-per-close (~$2,000), not CPL (~$130).</b><br><br>
+      <b>Cohorts.</b> Only 19 ads have ≥10 closes, 27 ≥5, 39 ≥3; 145 have zero. Correlations use closes ≥5 (85% of spend); creative-attribute breakdowns use closes ≥3 with a ≥6-close floor per group. All metrics are close-weighted (total margin ÷ closes) — the correct aggregate for a per-enrollment number.<br><br>
+      <b>Confidence.</b> <span class="tier">T1</span> descriptive (the data shows X) · <span class="tier">T2</span> inferential (confounders named) · <span class="tier">T3</span> speculative (a hypothesis to test). The anchor finding is T2 (crude regex anchor extraction, small n); the "outcome beats problem" read is T3 (rests on J521).<br><br>
+      <b>Two caveats before betting the account on this.</b> (1) This is <b>ad-level</b> data — Sam's rule is to judge at the <b>adset</b> level; re-run there and expect the noise outliers to wash out while the structural signals hold. (2) The FICO/HHI/utilization fields are <b>ungraded in the file's reliability sheet and likely modeled/appended</b>, not hard credit pulls — treat profile precision as directional. All creative tags (motivator, funnel, hook, voice, format) are <b>Gemini-classified at "Moderate" reliability.</b><br><br>
+      <b>Not in scope.</b> Adset-level re-aggregation, hand-coded anchors, a date/fatigue dimension, and isolating the call-center close-rate contribution from the creative's — each would sharpen this and is recommended as follow-up.
+    </p>
+  </div></section>
+</div>
+
+<script>
+const DATA = {"kpis": {"spend": 1928218.0, "leads": 15141, "closes": 918, "net_margin": 82023.0, "pos_margin": 202622.0, "neg_margin": -120599.0, "j521": 58100.0, "blended_cr": 6.1, "n_ads": 215, "n_closes_ge5": 27, "j521_share": 71}, "driver_corr": [{"label": "CPA (cost per close)", "r": -0.718}, {"label": "Avg HHI", "r": -0.287}, {"label": "Avg FICO", "r": -0.261}, {"label": "CPL (cost per lead)", "r": -0.015}, {"label": "ABI (enrolled debt)", "r": -0.003}, {"label": "CC utilization", "r": 0.146}, {"label": "Close rate", "r": 0.624}], "anchor": {"hi_mpu": -143, "lo_mpu": 131, "r_abi": 0.16, "r_fico": 0.6, "r_util": -0.54, "r_mpu": -0.25, "n_hi": 10, "n_lo": 4}, "funnel": [{"label": "Mid Funnel", "wmpu": 166, "tm": 106655, "closes": 643, "ads": 25}, {"label": "Top Funnel", "wmpu": 9, "tm": 1636, "closes": 184, "ads": 12}, {"label": "Bottom Funnel", "wmpu": -122, "tm": -5860, "closes": 48, "ads": 2}], "hook": [{"label": "Before-After", "wmpu": 225, "tm": 102032, "closes": 454, "ads": 8}, {"label": "Price-Shock", "wmpu": 124, "tm": 20027, "closes": 162, "ads": 4}, {"label": "UGC-Native", "wmpu": 50, "tm": 3961, "closes": 80, "ads": 8}, {"label": "Curiosity-Gap", "wmpu": -65, "tm": -7403, "closes": 114, "ads": 13}, {"label": "Testimonial-Lead", "wmpu": -216, "tm": -13387, "closes": 62, "ads": 5}], "voice": [{"label": "V-UGC-PEER", "wmpu": 220, "tm": 59176, "closes": 269, "ads": 14}, {"label": "V-CUSTOMER", "wmpu": 164, "tm": 29309, "closes": 179, "ads": 3}, {"label": "V-NO-VOICE", "wmpu": 105, "tm": 8411, "closes": 80, "ads": 4}, {"label": "V-BRAND", "wmpu": 23, "tm": 1548, "closes": 68, "ads": 6}, {"label": "V-ACTOR", "wmpu": 14, "tm": 3987, "closes": 279, "ads": 12}], "fmt_bucket": [{"label": "UGC Organic Content Video", "wmpu": 1236, "tm": 18533, "closes": 15, "ads": 3}, {"label": "Visual-Selling Infomercial Video", "wmpu": 332, "tm": 13615, "closes": 41, "ads": 2}, {"label": "Product-Hero Statics", "wmpu": 165, "tm": 8580, "closes": 52, "ads": 1}, {"label": "UGC Testimonial Video", "wmpu": 145, "tm": 75394, "closes": 520, "ads": 16}, {"label": "Produced Infomercial Video", "wmpu": 102, "tm": 13997, "closes": 137, "ads": 8}, {"label": "Messaging-Hero Statics", "wmpu": 16, "tm": 727, "closes": 46, "ads": 2}, {"label": "Multi-Product Choice Statics", "wmpu": -260, "tm": -4160, "closes": 16, "ads": 1}, {"label": "Messaging-Hero Script-Length Statics", "wmpu": -505, "tm": -24255, "closes": 48, "ads": 6}], "typ": [{"label": "Video", "wmpu": 170, "tm": 121539, "closes": 713, "ads": 29}, {"label": "Static", "wmpu": -118, "tm": -19108, "closes": 162, "ads": 10}], "formula": [{"label": "OS", "wmpu": 296, "tm": 93450, "closes": 316, "ads": 9}, {"label": "PS", "wmpu": 96, "tm": 16278, "closes": 170, "ads": 4}, {"label": "Static-Only", "wmpu": 27, "tm": 1290, "closes": 47, "ads": 2}, {"label": "OAS+", "wmpu": 16, "tm": 1880, "closes": 116, "ads": 6}, {"label": "PAS&#43;", "wmpu": 16, "tm": 1473, "closes": 93, "ads": 3}, {"label": "PAS+", "wmpu": -21, "tm": -1639, "closes": 77, "ads": 9}, {"label": "AIDA+", "wmpu": -72, "tm": -2313, "closes": 32, "ads": 4}, {"label": "PAS-plus", "wmpu": -377, "tm": -7540, "closes": 20, "ads": 1}], "leaders": [{"label": "J521V1B", "tm": 58100}, {"label": "J737V1C", "tm": 23144}, {"label": "J679V1D", "tm": 21352}, {"label": "J568V1D", "tm": 16988}, {"label": "J699V1A", "tm": 11844}, {"label": "J679V1A", "tm": 8696}, {"label": "J641V1B", "tm": 8580}, {"label": "J338V1B", "tm": 7455}, {"label": "J696V1D", "tm": -7374}, {"label": "J753V1B", "tm": -7536}, {"label": "J716V1C", "tm": -7540}, {"label": "J718V1B", "tm": -9024}, {"label": "J655V1A", "tm": -11355}, {"label": "J742V1D", "tm": -15015}], "cpl_table": [{"cohort": "Low CPL (< $110)", "n": 6, "cr": 4.7, "tm": -8184, "util": 76.1}, {"cohort": "Higher CPL (\u2265 $110)", "n": 21, "cr": 7.6, "tm": 113403, "util": 73.3}], "cpl_corr": {"cpl_cr": 0.33, "cpl_mpu": -0.02}, "cards": [{"name": "J521V1B_Videots_More3_SW1DebtUGC-Kellen-Refresh_12/1/25_ 6834566678505", "short": "J521V1B", "role": "ENGINE \u2014 defend & clone", "role_class": "engine", "anchor": "No anchor", "url": "https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6884357100505.mp4", "mtype": "video", "tm": 58100, "mpu": 350, "cr": 7.0, "cpa": 1779, "abi": 22198, "fico": 619, "util": 67.0, "spend": 295385, "funnel": "Mid Funnel", "hook": "Before-After", "voice": "V-UGC-PEER", "fmt": "UGC Testimonial Video", "hooktext": "[SPOKEN] Here's how I went from paying off three different credit cards to just one low monthly amount. [ON-SCREEN] How I went from 3 credit card payments to 1 low monthly amount [ON-SCREEN] Paid advertisement, not a real customer"}, {"name": "J679V1D_Videots_Adapt1_Bouquet-WoTSmash_091825_6842621786305", "short": "J679V1D", "role": "Scale \u2014 real graduates", "role_class": "win", "anchor": "$42k\u2013$50k", "url": "https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6868439198905.mp4", "mtype": "video", "tm": 21352, "mpu": 157, "cr": 6.1, "cpa": 2070, "abi": 23533, "fico": 591, "util": 75.0, "spend": 281571, "funnel": "Mid Funnel", "hook": "Before-After", "voice": "V-CUSTOMER", "fmt": "UGC Testimonial Video", "hooktext": "[ON-SCREEN] They were drowning in credit card debt until Freedom Debt Relief gave them a path to being debt-free by reducing what they owed for one low monthly amount[SPOKEN] We owed $42,000.[ON-SCREEN] Cindy G. Freedom Debt Relie"}, {"name": "J568V1D_Videots_Adapt3_SW3Infomercial-ThemvsUs_12/1/25_6627338658505", "short": "J568V1D", "role": "Scale \u2014 split-screen", "role_class": "win", "anchor": "$40,000+", "url": "https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6884357100905.mp4", "mtype": "video", "tm": 16988, "mpu": 274, "cr": 6.3, "cpa": 2035, "abi": 23834, "fico": 603, "util": 71.0, "spend": 126154, "funnel": "Mid Funnel", "hook": "Before-After", "voice": "V-ACTOR", "fmt": "Produced Infomercial Video", "hooktext": "[ON-SCREEN] $40,000+ in credit card debt [ON-SCREEN] VS [ON-SCREEN] Freedom Debt Relief [ON-SCREEN] Drained savings [ON-SCREEN] Extreme stress [ON-SCREEN] Strained relationships [ON-SCREEN] 1 low monthly payment [ON-SCREEN] No upf"}, {"name": "J699V1A_VideoTS_Adapt3_ReduceDebtAmt-GFX_111225_6860156463305", "short": "J699V1A", "role": "Scale \u2014 GFX calculator", "role_class": "win", "anchor": "Calculator (low)", "url": "https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6860156463305.mp4", "mtype": "video", "tm": 11844, "mpu": 658, "cr": 8.9, "cpa": 1654, "abi": 23057, "fico": 587, "util": 77.0, "spend": 29767, "funnel": "Mid Funnel", "hook": "Price-Shock", "voice": "V-NO-VOICE", "fmt": "Visual-Selling Infomercial Video", "hooktext": "[ON-SCREEN] Resolve Credit Card Debt[ON-SCREEN] Est. Total Debt $1,800[ON-SCREEN] Est."}, {"name": "J641V1B_Staticts_New_SW3Infomercial-Static-AICartoonImages-TSMJ_LowCPL_03192026_6922593104505", "short": "J641V1B", "role": "Scale \u2014 static (cartoon B/A)", "role_class": "win", "anchor": "No anchor", "url": "https://datateam-ts-assets.s3.amazonaws.com/image_history/485342304981701/a_6922593104505.jpg", "mtype": "image", "tm": 8580, "mpu": 165, "cr": 6.5, "cpa": 1532, "abi": 18089, "fico": 581, "util": 76.0, "spend": 79664, "funnel": "Mid Funnel", "hook": "Before-After", "voice": "V-ACTOR", "fmt": "Product-Hero Statics", "hooktext": "[ON-SCREEN] How I went from 3 credit card payments to one low monthly amount[ON-SCREEN] Paid advertisement, not an actual customer testimonial. Individual results will vary."}, {"name": "J338V1B__Videots_Upgrade_SW2UGC-Kellen_10/28/2025_6855471039705", "short": "J338V1B", "role": "Clone source (Kellen)", "role_class": "win", "anchor": "No anchor", "url": "https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6881390976705.mp4", "mtype": "video", "tm": 7455, "mpu": 497, "cr": 6.0, "cpa": 2054, "abi": 25301, "fico": 585, "util": 74.0, "spend": 30814, "funnel": "Mid Funnel", "hook": "Curiosity-Gap", "voice": "V-UGC-PEER", "fmt": "UGC Testimonial Video", "hooktext": "[ON-SCREEN] How I went from 3 credit card payments to 1 low monthly amount[SPOKEN] Here's how I went from paying off three different credit cards to just one low monthly amount.[ON-SCREEN] Freedom Debt Relief helped me[SPOKEN] Fre"}, {"name": "J711V1C_Videots_Upgrade1_P1DebtRelief-SW1LessPayments-VisualRefresh-FB-TF-INF_012126_ 6885471288105", "short": "J711V1C", "role": "Watch", "role_class": "win", "anchor": "No anchor", "url": "https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6885471288105.mp4", "mtype": "video", "tm": 5832, "mpu": 324, "cr": 5.6, "cpa": 2187, "abi": 25456, "fico": 587, "util": 73.0, "spend": 39359, "funnel": "Top Funnel", "hook": "Curiosity-Gap", "voice": "V-CUSTOMER", "fmt": "Produced Infomercial Video", "hooktext": "[SPOKEN] Their life was on hold due to unsecured debt. [ON-SCREEN] Their life was on hold due to unsecured debt [ON-SCREEN] Paid advertisement, not a real customer testimonial."}, {"name": "J753V1D_VideoTS_Upgrade1_P1DebtRelief-SW2BigResult-ViralDebtGirlPersonaOpeners-FB-TF-WoT_040226_6928917074305", "short": "J753V1D", "role": "Leave \u2014 already profitable", "role_class": "win", "anchor": "$7,500", "url": "https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6928917074305.mp4", "mtype": "video", "tm": 3841, "mpu": 167, "cr": 7.3, "cpa": 1616, "abi": 18612, "fico": 578, "util": 78.0, "spend": 37157, "funnel": "Mid Funnel", "hook": "UGC-Native", "voice": "V-ACTOR", "fmt": "UGC Testimonial Video", "hooktext": "[SPOKEN] If you're carrying $7,500 or more in unsecured debt, Freedom Debt Relief may be able to help. [ON-SCREEN] If you're carrying $7,500 or more in unsecured debt, Freedom Debt Relief may be able to help [ON-SCREEN] Paid adver"}, {"name": "J686V1B_VideoTS_New_UGC-JoshSchaffrin_100925_ 6858205154505", "short": "J686V1B", "role": "High anchor \u2192 breakeven", "role_class": "neutral", "anchor": "$35,453", "url": "https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6866088348905.mp4", "mtype": "video", "tm": 2886, "mpu": 37, "cr": 7.6, "cpa": 1961, "abi": 21511, "fico": 608, "util": 69.0, "spend": 152948, "funnel": "Top Funnel", "hook": "Price-Shock", "voice": "V-ACTOR", "fmt": "UGC Testimonial Video", "hooktext": "[SPOKEN] Here's how I got rid of $35,453 of credit card debt. [ON-SCREEN] Here's how I got rid of $35,453 of credit card debt [ON-SCREEN] Paid advertisement, not a real customer testimonial."}, {"name": "J716V1C_Videots_More3_P1DebtRelief-SW1LessPayments-HistoricalUpdate-FB-BF-ShortGFX_011526_6882470710905", "short": "J716V1C", "role": "BoF \u2014 negative", "role_class": "loss", "anchor": "$22k (after)", "url": "https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6882470710905.mp4", "mtype": "video", "tm": -7540, "mpu": -377, "cr": 6.0, "cpa": 2796, "abi": 24327, "fico": 589, "util": 76.0, "spend": 55928, "funnel": "Bottom Funnel", "hook": "Before-After", "voice": "V-ACTOR", "fmt": "Produced Infomercial Video", "hooktext": "[ON-SCREEN] Before $$$ Credit Card Bills[ON-SCREEN] Multiple payments[ON-SCREEN] Making minimum payments[ON-SCREEN] Draining savings account[ON-SCREEN] freedom DEBT RELIEF logo[ON-SCREEN] After $438/mo avg. Program Payment[ON-SCRE"}, {"name": "J718V1B_StaticTS_Adapt3_P1DebtRelief-SW1LessPayments-RedditThread-FB-FF-INF_020426_6891772674705", "short": "J718V1B", "role": "KILL \u2014 Reddit static", "role_class": "kill", "anchor": "$32,546", "url": "https://datateam-ts-assets.s3.amazonaws.com/image_history/485342304981701/a_6891772674705.jpg", "mtype": "image", "tm": -9024, "mpu": -3008, "cr": 4.8, "cpa": 4152, "abi": 13116, "fico": 551, "util": 88.0, "spend": 12455, "funnel": "Mid Funnel", "hook": "UGC-Native", "voice": "V-UGC-PEER", "fmt": "Messaging-Hero Script-Length Statics", "hooktext": "[ON-SCREEN] r/personalfinance 10h ago[ON-SCREEN] SamKnowsStuff[ON-SCREEN] My unsecured credit card minimums add up to more than my rent. How is this legal?[ON-SCREEN] Card Number XXXXXXXX[ON-SCREEN] Card Limit 2000[ON-SCREEN] Pay "}, {"name": "J655V1A_Videots_New_SW1DebtUGC-ViralDebtGirl_072425_ 6816572959905", "short": "J655V1A", "role": "Prime profile, LOST \u2014 rework funnel/offer", "role_class": "loss", "anchor": "$40,000 (high)", "url": "https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6849243992305.mp4", "mtype": "video", "tm": -11355, "mpu": -757, "cr": 4.0, "cpa": 3097, "abi": 24314, "fico": 623, "util": 68.0, "spend": 46454, "funnel": "Mid Funnel", "hook": "UGC-Native", "voice": "V-UGC-PEER", "fmt": "UGC Testimonial Video", "hooktext": "[SPOKEN] I am the girl that's going viral for having over $40,000 in credit card debt. [ON-SCREEN] I am the girl that's going viral for having over $40K in credit card debt [SPOKEN] Here's how it happened."}, {"name": "J742V1D_StaticTS_Adapt3_P1DebtRelief-SW1LessPayments-BiggestRegret-FB-MF-NewGC_031626_6916303073105", "short": "J742V1D", "role": "KILL \u2014 shame static", "role_class": "kill", "anchor": "No anchor", "url": "https://datateam-ts-assets.s3.amazonaws.com/image_history/485342304981701/a_6916303073105.jpg", "mtype": "image", "tm": -15015, "mpu": -715, "cr": 3.6, "cpa": 1970, "abi": 14893, "fico": 539, "util": 90.0, "spend": 41365, "funnel": "Top Funnel", "hook": "Testimonial-Lead", "voice": "V-ACTOR", "fmt": "Messaging-Hero Script-Length Statics", "hooktext": "[ON-SCREEN] 07:14[ON-SCREEN] I was too embarrassed to admit I couldn't keep up with my bills.[ON-SCREEN] So I stayed quiet... while the balances grew.[ON-SCREEN] Freedom Debt Relief didn't judge me."}]};
+const HASH = '2e5976b0a833bf4f7a0d13662ed976afd3b22c3e33de630fa52cf47c67d4a956';
+async function tryUnlock(){
+  const pw=document.getElementById('pw').value;
+  const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(pw));
+  const hex=[...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
+  if(hex===HASH){document.getElementById('gate').style.display='none';document.getElementById('app').style.display='block';initApp();}
+  else{document.getElementById('err').textContent='Incorrect passphrase';}
+}
+document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')tryUnlock();});
+
+const POS='#1E9E6A', NEG='#C0392B', MUT='#9AA7AB', ACC='#16A6A6', DEEP='#0E7C8B', PURP='#6a4a99';
+const fmtUSD=v=>(v<0?'-$':'$')+Math.abs(v).toLocaleString();
+const fmtUSDk=v=>(v<0?'-$':'$')+Math.abs(Math.round(v/100)/10)+'k';
+
+// value-label plugin
+const valLab=(fmt)=>({id:'vl',afterDatasetsDraw(c){const{ctx}=c;ctx.save();ctx.font='700 12px Inter';const meta=c.getDatasetMeta(0);meta.data.forEach((bar,i)=>{const raw=c.data.datasets[0].data[i];const txt=fmt(raw);ctx.fillStyle='#0E1A1F';const horiz=c.options.indexAxis==='y';if(horiz){const x=bar.x+(raw>=0?6:-6);ctx.textAlign=raw>=0?'left':'right';ctx.textBaseline='middle';ctx.fillText(txt,x,bar.y);}else{ctx.textAlign='center';ctx.textBaseline=raw>=0?'bottom':'top';ctx.fillText(txt,bar.x,bar.y+(raw>=0?-4:4));}});ctx.restore();}});
+
+function hbar(id,items,valKey,fmt,colorByVal,zeroThresh){
+  const labels=items.map(d=>d.label), vals=items.map(d=>d[valKey]);
+  const colors=vals.map(v=>{if(colorByVal){if(Math.abs(v)<(zeroThresh||0))return MUT;return v>=0?POS:NEG;}return ACC;});
+  new Chart(document.getElementById(id),{type:'bar',data:{labels,datasets:[{data:vals,backgroundColor:colors,borderRadius:4,barPercentage:.78}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,layout:{padding:{right:54,left:8}},
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>fmt(c.raw)}}},
+      scales:{x:{grid:{color:'#EEF2F3'},ticks:{callback:fmt},grace:'12%'},y:{grid:{display:false},ticks:{font:{size:12,weight:'600'}}}}},
+    plugins:[valLab(fmt)]});
+}
+function vbar(id,items,valKey,fmt){
+  const labels=items.map(d=>d.label), vals=items.map(d=>d[valKey]);
+  const colors=vals.map(v=>v>=0?POS:NEG);
+  new Chart(document.getElementById(id),{type:'bar',data:{labels,datasets:[{data:vals,backgroundColor:colors,borderRadius:4,barPercentage:.55}]},
+    options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:22}},
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>fmt(c.raw)}}},
+      scales:{x:{grid:{display:false},ticks:{font:{weight:'700'}}},y:{grid:{color:'#EEF2F3'},ticks:{callback:fmt}}}},
+    plugins:[valLab(fmt)]});
+}
+
+let booted=false;
+function initApp(){
+  if(booted)return; booted=true;
+  // KPIs
+  const k=DATA.kpis;
+  const kpis=[
+    {l:'YTD spend',v:fmtUSDk(k.spend),s:k.n_ads+' assets'},
+    {l:'Closes (enrollments)',v:k.closes.toLocaleString(),s:k.n_closes_ge5+' ads carry real signal'},
+    {l:'Net YTD margin',v:fmtUSDk(k.net_margin),c:'pos',s:'≈4% of spend — thin'},
+    {l:'J521V1B share of margin',v:k.j521_share+'%',c:'neg',s:fmtUSDk(k.j521)+' from one ad'},
+    {l:'Blended close rate',v:k.blended_cr+'%',s:k.leads.toLocaleString()+' leads'},
+  ];
+  document.getElementById('kpiRow').replaceChildren(...kpis.map(o=>{
+    const c=document.createElement('div');c.className='kpi-card';
+    const l=document.createElement('div');l.className='kpi-label';l.textContent=o.l;
+    const v=document.createElement('div');v.className='kpi-value'+(o.c?' '+o.c:'');v.textContent=o.v;
+    const s=document.createElement('div');s.className='kpi-sub';s.textContent=o.s;
+    c.append(l,v,s);return c;}));
+
+  // charts
+  hbar('cDrivers',DATA.driver_corr,'r',v=>v.toFixed(2),true,0.08);
+  hbar('cAnchor',[{label:'→ FICO',r:DATA.anchor.r_fico},{label:'→ Utilization',r:DATA.anchor.r_util},{label:'→ ABI (debt)',r:DATA.anchor.r_abi},{label:'→ MPU',r:DATA.anchor.r_mpu}],'r',v=>v.toFixed(2),true,0.08);
+  vbar('cAnchorMpu',[{label:'Low anchor (<$30k)',v:DATA.anchor.lo_mpu},{label:'High anchor (≥$30k)',v:DATA.anchor.hi_mpu}],'v',v=>fmtUSD(v));
+  hbar('cFunnel',DATA.funnel,'wmpu',v=>fmtUSD(v),true,15);
+  hbar('cHook',DATA.hook,'wmpu',v=>fmtUSD(v),true,15);
+  hbar('cVoice',DATA.voice,'wmpu',v=>fmtUSD(v),true,15);
+  vbar('cType',DATA.typ,'wmpu',v=>fmtUSD(v));
+  hbar('cLeaders',DATA.leaders,'tm',v=>fmtUSDk(v),true,1);
+
+  // cpl table
+  document.getElementById('cplBody').replaceChildren(...DATA.cpl_table.map(r=>{
+    const tr=document.createElement('tr');
+    const c1=document.createElement('td');c1.textContent=r.cohort;c1.style.fontWeight='700';
+    const c2=document.createElement('td');c2.className='num';c2.textContent=r.n;
+    const c3=document.createElement('td');c3.className='num';c3.textContent=r.cr+'%';
+    const c4=document.createElement('td');c4.className='num';c4.textContent=r.util+'%';
+    const c5=document.createElement('td');c5.className='num '+(r.tm>=0?'pos':'neg');c5.textContent=fmtUSD(r.tm);
+    tr.append(c1,c2,c3,c4,c5);return tr;}));
+  document.getElementById('cc1').textContent=DATA.cpl_corr.cpl_cr.toFixed(2);
+  document.getElementById('cc2').textContent=DATA.cpl_corr.cpl_mpu.toFixed(2);
+
+  buildCards();
+}
+
+function stat(label,val,cls){const d=document.createElement('div');d.className='stat';const b=document.createElement('b');if(cls)b.className=cls;b.textContent=val;d.append(b,document.createTextNode(label));return d;}
+function buildCards(){
+  const rbMap={engine:'rb-engine',win:'rb-win',neutral:'rb-neutral',loss:'rb-loss',kill:'rb-kill'};
+  const grid=document.getElementById('adGrid');
+  grid.replaceChildren(...DATA.cards.map(ad=>{
+    const card=document.createElement('div');card.className='ad-card';
+    let media;
+    if(ad.mtype==='video'){media=document.createElement('video');media.src=ad.url;media.preload='metadata';media.muted=true;media.controls=true;media.playsInline=true;media.setAttribute('onloadedmetadata','this.currentTime=1');}
+    else{media=document.createElement('img');media.src=ad.url;media.loading='lazy';media.alt=ad.short;}
+    media.className='card-media';card.appendChild(media);
+
+    const meta=document.createElement('div');meta.className='ad-meta';
+    const badge=document.createElement('span');badge.className='role-badge '+(rbMap[ad.role_class]||'rb-win');badge.textContent=ad.role;meta.appendChild(badge);
+
+    const nm=document.createElement('div');nm.className='ad-name';nm.title=ad.name;nm.textContent=ad.name;meta.appendChild(nm);
+
+    const sg=document.createElement('div');sg.className='stat-grid';
+    sg.appendChild(stat('Total margin',fmtUSD(ad.tm),ad.tm>=0?'pos':'neg'));
+    sg.appendChild(stat('MPU',(ad.mpu>=0?'+':'')+ad.mpu,ad.mpu>=0?'pos':'neg'));
+    sg.appendChild(stat('Close rate',ad.cr+'%'));
+    sg.appendChild(stat('CPA','$'+ad.cpa.toLocaleString()));
+    sg.appendChild(stat('ABI','$'+ad.abi.toLocaleString()));
+    sg.appendChild(stat('Spend',fmtUSDk(ad.spend)));
+    sg.appendChild(stat('FICO',ad.fico||'—'));
+    sg.appendChild(stat('Utilization',ad.util+'%'));
+    meta.appendChild(sg);
+
+    const pills=document.createElement('div');pills.className='pills';
+    [['anchor',ad.anchor],['',ad.funnel],['',ad.hook],['',ad.voice]].forEach(([cls,txt])=>{const p=document.createElement('span');p.className='pill'+(cls?' '+cls:'');p.textContent=(cls==='anchor'?'⚓ ':'')+txt;pills.appendChild(p);});
+    meta.appendChild(pills);
+
+    const hb=document.createElement('div');hb.className='hookbox';
+    // highlight [SPOKEN]/[ON-SCREEN] without innerHTML
+    const parts=ad.hooktext.split(/(\[SPOKEN\]|\[ON-SCREEN\])/);
+    parts.forEach(seg=>{if(seg==='[SPOKEN]'){const s=document.createElement('span');s.className='sp';s.textContent='SPOKEN ';hb.appendChild(s);}else if(seg==='[ON-SCREEN]'){const s=document.createElement('span');s.className='os';s.textContent='ON-SCREEN ';hb.appendChild(s);}else{hb.appendChild(document.createTextNode(seg));}});
+    meta.appendChild(hb);
+
+    card.appendChild(meta);return card;}));
+}
+</script>
+</body>
+</html>
