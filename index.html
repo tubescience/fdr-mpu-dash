@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Freedom Debt Relief — MPU, the Lifetime View</title>
+<title>Freedom Debt Relief — What Brings MPU Back</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -86,8 +86,8 @@ th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border)}
 th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700}
 td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
 td.pos{color:var(--pos)} td.neg{color:var(--neg)}
-.verdict{font-size:11px;font-weight:800;padding:3px 10px;border-radius:999px;white-space:nowrap}
-.v-rep{background:#e3f3ee;color:var(--pos)} .v-fail{background:#fbe5e2;color:var(--neg)} .v-part{background:#FCF4E8;color:#9a5e10} .v-up{background:#E8EFF8;color:#3a5a99}
+.sigtag{font-size:11px;font-weight:800;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.s-sig{background:#e3f3ee;color:var(--pos)} .s-dir{background:#FCF4E8;color:#9a5e10} .s-ns{background:#eef0ef;color:var(--muted)}
 
 .ad-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;grid-auto-rows:1fr}
 @media(max-width:1100px){.ad-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -119,6 +119,9 @@ td.pos{color:var(--pos)} td.neg{color:var(--neg)}
 .vchip.pos{background:#e3f3ee;color:var(--pos)} .vchip.neg{background:#fbe5e2;color:var(--neg)}
 .vchip small{font-weight:600;opacity:.75}
 
+.setupli{font-size:14px;color:var(--ink-soft);margin:0;padding-left:18px}
+.setupli li{margin-bottom:8px}
+
 .foot{font-size:12.5px;color:var(--muted);line-height:1.6}
 .foot b{color:var(--ink-soft)}
 .tier{font-size:10px;font-weight:800;padding:1px 6px;border-radius:4px;background:#E8EFF0;color:var(--accent-deep);vertical-align:middle}
@@ -136,15 +139,15 @@ td.pos{color:var(--pos)} td.neg{color:var(--neg)}
 
 <div id="app">
   <div class="nav">
-    <div class="brand">FDR · <span>MPU — Lifetime</span></div>
+    <div class="brand">FDR · <span>MPU</span></div>
     <a href="#bluf">BLUF</a>
-    <a href="#recession">2025 vs 2026</a>
-    <a href="#scoreboard">Replication</a>
-    <a href="#drivers">Drivers</a>
-    <a href="#levers">Creative levers</a>
-    <a href="#anchorx">Anchor autopsy</a>
-    <a href="#noise">Noise</a>
-    <a href="#age">Age test</a>
+    <a href="#mpu101">What moves MPU</a>
+    <a href="#happened">What happened</a>
+    <a href="#media">Media factors</a>
+    <a href="#creative">Creative factors</a>
+    <a href="#anchorx">The anchor myth</a>
+    <a href="#playbook">Recovery ideas</a>
+    <a href="#noise">Reading MPU safely</a>
     <a href="#concentration">Concentration</a>
     <a href="#evidence">Evidence</a>
     <a href="#recs">Recommendations</a>
@@ -153,13 +156,13 @@ td.pos{color:var(--pos)} td.neg{color:var(--neg)}
 
   <div class="hero">
     <div class="wrap">
-      <div class="eyebrow" style="color:var(--accent-soft)">Creative Strategy · 2025 full year + 2026 YTD · 616 + 215 assets · $5.7M lifetime</div>
-      <h1>2025 made $1.13M. 2026 YTD made $82k.<br>The recipe held — the economics didn't.</h1>
-      <p class="lead">Brandon's ask: feed in the prior year so J521 stops biasing the math. Done — all 130 classifiable 2025 ads (83% of spend) were re-watched and re-classified, and every conclusion from the June dash was re-tested against the full-year panel. The winning creative recipe <strong>replicates and is not J521 bias</strong>. But four of the June conclusions — the debt anchor as targeting, the cheap-CPL trap, statics-as-losers, and the utilization sweet spot — <strong>do not survive the bigger dataset</strong>. And the biggest 2026 story isn't creative at all: margin per enrollment collapsed 84% account-wide.</p>
+      <div class="eyebrow" style="color:var(--accent-soft)">Creative Strategy · FDR margin-per-enrollment deep dive · 2025 full year + 2026 YTD · $5.7M spend</div>
+      <h1>Margin per enrollment fell 84%.<br>Here's what the data says about bringing it back.</h1>
+      <p class="lead">MPU — Freedom's margin per enrollment, now in our data passbacks — collapsed from <strong>$542/close across full-year 2025 to $89/close in 2026 YTD</strong>. To find the levers, we re-watched and AI-classified every classifiable 2025 ad (130 ads, 83% of spend), tied every creative attribute to margin, decomposed the decline through the media funnel, and audited the account's current media setup. The short version: <strong>the decline is mostly priced-in economics (lead costs +26% CPM, lighter debt loads), not a creative failure — but there are three stat-significant creative levers and a set of media-side ideas that can claw margin back.</strong></p>
       <div>
-        <span class="tagchip">MPU ≈ 9.7% × enrolled debt − CPA (r = 0.99, both years)</span>
-        <span class="tagchip">Margin/close $542 → $89 (−84%) YoY</span>
-        <span class="tagchip">J521V1B = 38% of 2025 net (was 71% of 2026 YTD)</span>
+        <span class="tagchip">MPU ≈ 9.7% × enrolled debt − CPA (r = 0.99)</span>
+        <span class="tagchip">2025: +$1.13M net margin · 2,075 closes</span>
+        <span class="tagchip">3 creative levers at p &lt; 0.05</span>
       </div>
     </div>
   </div>
@@ -170,151 +173,154 @@ td.pos{color:var(--pos)} td.neg{color:var(--neg)}
     <div class="kpi-row" id="kpiRow"></div>
     <div class="bluf">
       <div class="meta-card p0">
-        <div class="ttl"><span class="ptag p0">Priority 0</span> 2026 is a margin recession, not a creative mystery.</div>
-        <p>Every variant that ran in both years earned dramatically less per close in 2026 (J521: $832→$350 · J568: $775→$274 · J655: +$808→−$757). Account-wide margin per close fell $542→$89. Decomposed: <strong>~60% is CPA inflation (CPL $113→$127, close rate flat), ~40% is lower enrolled debt per close (~$24.2k→~$22.5k)</strong>. Same ads, worse economics — that points at the environment (lead costs + who's in market), not at the creative recipe. <span class="tier">T2</span></p>
+        <div class="ttl"><span class="ptag p0">What happened</span> The decline is mostly economics, not creative.</div>
+        <p>The same ads earn far less per close in 2026 than they did in 2025 (J521V1B: $832 → $350/close; every shared ad fell). Decomposed: <strong>~60% is acquisition-cost inflation — CPM is up 26% — and ~40% is lighter enrolled debt per close (~$24.2k → ~$22.5k)</strong>, with close rates flat. When identical creative produces worse margins, the cause sits in the auction and the lead pool, not the ads. <span class="tier">T2</span></p>
       </div>
       <div class="meta-card">
-        <div class="ttl"><span class="ptag p1">Priority 1</span> The engine recipe is confirmed — and it isn't J521 bias.</div>
-        <p>On the full-year signal cohort (51 ads ≥5 closes, 85% of spend): CPA is still the #1 MPU driver (−0.53; −0.68 at ≥10 closes), nearly unchanged with J521 removed. At the creative layer the same recipe carries both years: <strong>Before-After hooks (+$730/close on 787 closes) · peer-creator voice (+$689 on 928) · outcome/"simplify &amp; protect" framing (+$728/close ex-J521)</strong>. The lever is who the ad recruits and what it promises — close-rate execution itself sits with Freedom's sales floor.</p>
+        <div class="ttl"><span class="ptag p1">Creative levers</span> Three creative factors move MPU at statistical significance.</div>
+        <p>Across 51 ads with real signal (≥5 closes, 85% of spend): <strong>outcome/relief framing beats problem/pain framing (+$279/close, p=0.001) · straight product offers beat quiz/calculator-led ads (+$544/close, p=0.003) · Before-After story hooks beat testimonial-style openers (+$559/close, p=0.015)</strong>. All hold with the #1 ad removed. These are the brief-able levers.</p>
       </div>
       <div class="meta-card pw">
-        <div class="ttl"><span class="ptag pw">Revision</span> Four June conclusions failed replication. Don't brief them.</div>
-        <p><strong>The debt anchor is not the targeting</strong> (anchor $ ↔ FICO −0.14 in 2025 vs +0.60 claimed; anchor ↔ MPU −0.04). <strong>Cheap CPL is not a trap</strong> (sub-$110 ads closed 6.7% vs 6.2% and made 2.2× the margin in 2025). <strong>Statics aren't net losers</strong> (+$104k in 2025, just weaker per close). <strong>No utilization sweet spot</strong> (margin flat across 67–78% bands). <span class="tier">T1</span></p>
+        <div class="ttl"><span class="ptag pw">Myth check</span> The popular levers don't actually move margin.</div>
+        <p>Things that look like levers but show no relationship with MPU in the full-year data: <strong>the dollar figure an ad shows on screen</strong> (corr with MPU −0.04), <strong>cheap vs expensive leads</strong> (cheap-CPL ads actually made 2.2× the margin), <strong>FICO-prime audiences</strong> (higher-FICO pools closed <em>worse</em>), and <strong>card-utilization bands</strong> (margin flat from 67–78%). Briefing against these spends effort where there's no payoff. <span class="tier">T1</span></p>
       </div>
       <div class="meta-card">
-        <div class="ttl"><span class="ptag p2">Priority 2</span> One variant's MPU is a coin flip. Judge families, not ads.</div>
-        <p>Median MPU spread between sibling variants of the <em>same concept</em> is <strong>$1,692/close</strong> — twice the portfolio's standard deviation. J568V1D made +$775/close while J568V1C lost −$2,171. TJ's read was right: near-identical ads land on opposite sides of zero. Operating rule: no verdicts under ~20 closes, and read concepts at the family/cohort level.</p>
+        <div class="ttl"><span class="ptag p2">Reading rule</span> One ad's MPU is a coin flip. Judge families and cohorts.</div>
+        <p>Sibling variants of the <em>same concept</em> differ by a median <strong>$1,692/close</strong> — twice the portfolio's spread. J568V1D made +$775/close while its sibling J568V1C lost $2,171. No MPU verdict below ~20 closes; concepts get judged at the family level, audiences at the ad-set level.</p>
       </div>
     </div>
   </div></section>
 
-  <section id="recession"><div class="wrap">
-    <div class="eyebrow">The context the June dash was missing</div>
-    <h2>2025 vs 2026: same machine, compressed margins</h2>
-    <p class="lead">The June analysis only saw 2026 — a window where almost everything loses money, so whatever was scaling looked like the only thing that worked. The full-year panel shows a portfolio that made <strong>+$1.13M net</strong> across 100+ profitable variants. <span class="tier">T1</span></p>
+  <section id="mpu101"><div class="wrap">
+    <div class="eyebrow">The mechanics</div>
+    <h2>What MPU is, and what actually moves it</h2>
+    <p class="lead">MPU is Freedom's margin per enrollment: roughly <strong>9.7% of the debt a customer enrolls (ABI), minus what it cost to close them (CPA)</strong> — the formula reproduces Sam's passback numbers at r = 0.99. So only two things can move it: <strong>recruit people carrying more enrollable debt</strong>, or <strong>lower the cost of a close</strong>. Everything below hangs off those two terms.</p>
+    <div class="card" style="margin-top:18px">
+      <h3>Correlation of each factor with MPU — 51 ads with ≥5 closes, 85% of 2025 spend</h3>
+      <div class="sub">Removing the #1 ad (J521V1B) changes every bar by ≤0.02 — none of this is one ad's gravity. <span class="tier">T1</span></div>
+      <div class="chart-wrap" style="height:340px"><canvas id="cDrivers"></canvas></div>
+    </div>
+    <p class="lead" style="margin-top:16px"><strong>Both terms matter.</strong> CPA is the strongest single factor (−0.53, strengthening to −0.68 among ads with ≥10 closes), and enrolled debt is right behind it (+0.51). CPA itself is driven by close rate (corr −0.61), not lead price (CPL ↔ close rate ≈ 0) — <strong>a close gets cheap when the right person walks in, not when the click was cheap.</strong></p>
+    <div class="callout teal">
+      <div class="ic">🔍</div>
+      <div>
+        <div class="t">Who actually closes (it's not who you'd guess)</div>
+        <p>Close rate is Freedom's sales floor working whatever leads creative sends — we don't dial it directly. But we <em>can</em> choose who walks in, and the data flips the usual instinct: <strong>higher-FICO lead pools closed worse (−0.36), higher-utilization pools closed better (+0.40)</strong>. People with options — balance transfers, consolidation loans — take them; people genuinely stuck enroll. The profitable recruit is two-sided: <strong>carrying real, large debt (drives the margin ceiling) and genuinely stuck-but-solvent (drives the close)</strong> — not maximally "prime." <span class="tier">T2</span> Confounder: profile fields are modeled and ad-grain; worth validating at ad-set grain with Sam.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="happened"><div class="wrap">
+    <div class="eyebrow">The diagnosis</div>
+    <h2>What happened to MPU between 2025 and 2026</h2>
+    <p class="lead">2025 produced <strong>+$1.13M of net creative margin</strong> on 2,075 closes. 2026 YTD is at +$82k on 918. Margin per close fell 84% — and it fell <em>on the same creative</em>. <span class="tier">T1</span></p>
     <div class="grid2" style="margin-top:18px">
       <div class="card">
         <h3>The blended account, year over year</h3>
-        <div class="sub">2026 is YTD (~5 months) — volume comparisons aren't like-for-like, rates are.</div>
+        <div class="sub">2026 is ~5 months — compare rates, not volumes.</div>
         <table><thead><tr><th></th><th class="num">2025 FY</th><th class="num">2026 YTD</th></tr></thead><tbody id="yoyBody"></tbody></table>
       </div>
       <div class="card">
         <h3>Same ad, two years — margin per close</h3>
-        <div class="sub">Every shared variant with ≥5 closes in 2025. All of them fell. <span class="tier">T1</span></div>
-        <div class="chart-wrap" style="height:300px"><canvas id="cShared"></canvas></div>
+        <div class="sub">Every variant that has ≥5 closes in 2025 and also ran in 2026. All fell. When an unchanged input produces a worse output, the cause is the environment. <span class="tier">T1</span></div>
+        <div class="chart-wrap" style="height:290px"><canvas id="cShared"></canvas></div>
       </div>
     </div>
-    <div class="callout">
-      <div class="ic">⚠️</div>
-      <div>
-        <div class="t">Why this reframes the June recommendations</div>
-        <p>When the same creative earns $400–600 less per close in 2026 with close rates flat, attribute-level differences <em>within</em> 2026 are mostly noise riding on a downdraft. The honest questions for Sam/Brandon are: <strong>what moved lead pricing up ~12%, and what pulled enrolled debt per close down ~7%?</strong> Both are account-level, not per-ad. Creative can lean against the ABI side (recruit heavier debt loads); the CPL side is an auction/market conversation worth having jointly. <span class="tier">T2</span></p>
-      </div>
-    </div>
+    <p class="lead" style="margin-top:16px">Splitting the $453/close decline through the MPU formula: <strong>~$280 is higher cost per close</strong> (lead cost up 12% on the backend, close rate flat) and <strong>~$173 is lighter enrolled debt</strong> per close. So the recovery question has two halves — get cost-per-close down, get debt-per-close up — and the sections below take them in turn.</p>
   </div></section>
 
-  <section id="scoreboard"><div class="wrap">
-    <div class="eyebrow">The de-bias Brandon asked for</div>
-    <h2>Replication scoreboard: every June claim vs the full-year panel</h2>
-    <p class="lead">A claim earns <strong>Replicates</strong> only if the 2025 panel shows the same direction at comparable strength, including with J521V1B removed.</p>
-    <table style="margin-top:14px">
-      <thead><tr><th>June 2026 claim</th><th>2026 YTD read</th><th>2025 full-year read</th><th>Verdict</th></tr></thead>
-      <tbody id="scoreBody"></tbody>
-    </table>
-  </div></section>
-
-  <section id="drivers"><div class="wrap">
-    <div class="eyebrow">The numeric spine</div>
-    <h2>What moves MPU — both years side by side</h2>
-    <p class="lead">Correlation of each driver with MPU on the signal cohort (2025: 51 ads ≥5 closes, 85% of spend · 2026: 27 ads). MPU ≈ 9.7% × enrolled debt − CPA, so both terms can matter — in the bigger panel, both do. <span class="tier">T1</span></p>
-    <div class="card" style="margin-top:18px">
-      <h3>Driver ↔ MPU correlation, 2025 vs 2026</h3>
-      <div class="sub">2025 in teal, 2026 in grey. Ex-J521 values are within ±0.02 of the 2025 bars on every driver — none of this is one ad's gravity.</div>
-      <div class="chart-wrap" style="height:380px"><canvas id="cDrivers"></canvas></div>
-    </div>
-    <div class="callout teal">
-      <div class="ic">🔍</div>
-      <div>
-        <div class="t">On Brandon's point about close rate</div>
-        <p>Agreed — and the data sharpens it. Close rate tracks MPU (+0.36; +0.65 at ≥10 closes) but it is <strong>not a dial we turn directly</strong>; it's Freedom's sales floor working whatever leads the creative sends. What the ad-grain data adds: the "prime profile closes better" intuition doesn't show up here — <strong>higher-FICO lead pools closed <em>worse</em> (FICO↔close-rate −0.36), higher-utilization pools closed <em>better</em> (+0.40)</strong>. People with options (balance transfers, consolidation loans) take them; people genuinely stuck enroll. Meanwhile ABI rewards heavier debt loads (+0.51 with MPU). So the creative job is a two-sided recruit: <strong>real, large debt (drives ABI) + genuinely stuck-but-solvent (drives close)</strong> — not maximally "prime." <span class="tier">T2</span> Confounder: profile fields are modeled/appended and ad-grain; Sam's adset-grain read should arbitrate.</p>
-      </div>
-    </div>
-  </div></section>
-
-  <section id="levers"><div class="wrap">
-    <div class="eyebrow">The actionable layer — 130 ads re-watched &amp; classified</div>
-    <h2>Which creative attributes carried 2025 margin</h2>
-    <p class="lead">Close-weighted margin per enrollment (total margin ÷ closes), ads ≥3 closes, groups ≥20 closes. Grey bars = the same group's 2026 YTD value where the June dash measured it — direction agreement matters more than level (2026 levels sit in the recession). <span class="tier">T2</span> (tags are AI-classified).</p>
+  <section id="media"><div class="wrap">
+    <div class="eyebrow">Question 1 — is it the media setup?</div>
+    <h2>Media factors: what the funnel and the account setup show</h2>
+    <p class="lead">We pulled the Meta-side funnel for both years and audited the current delivery setup directly. The funnel says the cost pressure is real and upstream; the setup audit says the account is already doing several smart things — and leaves three specific openings. <span class="tier">T1</span> on the numbers; setup implications <span class="tier">T2</span>.</p>
     <div class="grid2" style="margin-top:18px">
-      <div class="card"><h3>Hook archetype</h3><div class="sub">Before-After #1 both years; Testimonial-Lead weakest both years. Curiosity-Gap is fine in 2025 (+$472 on 368 closes) — its 2026 negative didn't replicate.</div><div class="chart-wrap" style="height:250px"><canvas id="cHook"></canvas></div></div>
-      <div class="card"><h3>Voice</h3><div class="sub">Peer-creator UGC carries the portfolio (928 closes). Straight actor reads weakest both years.</div><div class="chart-wrap" style="height:250px"><canvas id="cVoice"></canvas></div></div>
-      <div class="card"><h3>Messaging frame</h3><div class="sub">Outcome/"simplify &amp; protect" beats problem/pain framing even ex-J521 (+$728 vs +$450) — but it's still only 3 concepts vs 48. The most under-built high-evidence lane.</div><div class="chart-wrap" style="height:170px"><canvas id="cMotiv"></canvas></div></div>
-      <div class="card"><h3>Sales formula</h3><div class="sub">OS (outcome-led story) is the scaled winner — 808 closes at +$716.</div><div class="chart-wrap" style="height:250px"><canvas id="cFormula"></canvas></div></div>
-      <div class="card"><h3>Offer mechanic</h3><div class="sub">Quiz/calculator-led ads underperform straight product offers badly — and close 25% worse (5.1% vs 6.8%).</div><div class="chart-wrap" style="height:160px"><canvas id="cOffer"></canvas></div></div>
-      <div class="card"><h3>Asset type</h3><div class="sub">Video out-earns statics per close, but statics were +$104k net in 2025 — "statics lose money" was a 2026 artifact.</div><div class="chart-wrap" style="height:160px"><canvas id="cType"></canvas></div></div>
+      <div class="card">
+        <h3>The acquisition funnel, year over year</h3>
+        <div class="sub">Meta-side metrics are whole-account; backend rows are Sam's passback.</div>
+        <table><thead><tr><th>Stage</th><th class="num">2025</th><th class="num">2026 YTD</th><th class="num">Change</th></tr></thead><tbody id="mediaBody"></tbody></table>
+        <p style="font-size:13px;color:var(--ink-soft);margin-top:10px"><strong>The tell:</strong> CPM rose 26%, yet Meta-measured cost per lead <em>fell</em> 15% — clicks and platform leads got easier to win — while the backend cost per qualified lead <em>rose</em> 12%. More platform leads per dollar, worse economics per lead: <strong>the lead mix got thinner at the same time the auction got pricier.</strong> That double movement is what crushed margin. <span class="tier">T2</span> (Meta and backend count leads differently; the directional gap is the signal, not the exact spread.)</p>
+      </div>
+      <div class="card">
+        <h3>Current delivery setup (audited 6/10)</h3>
+        <div class="sub">From the account's live ad sets.</div>
+        <ul class="setupli" id="setupList"></ul>
+        <p style="font-size:13px;color:var(--ink-soft);margin-top:10px"><strong>What's already right:</strong> quality-weighted (LQS) bidding, deep bad-lead exclusions, cost caps. <strong>The openings:</strong> nothing in the setup expresses <em>where margin actually lives</em> — no age skew toward 45+, no debt-size weighting in the optimization event, and Advantage+ audience expansion free to chase the cheap young clicks that the funnel says are diluting the pool.</p>
+      </div>
     </div>
-    <p class="lead" style="margin-top:18px"><strong>The 2025-confirmed recipe:</strong> peer-creator or no-voice video · Before-After or contrast structure · outcome/"simplify &amp; protect" frame · straight product offer (no quiz gate) · sound-off legible. <strong>Both-years weak:</strong> Testimonial-Lead openers · straight actor reads · quiz/calculator-gated offers.</p>
+    <p class="lead" style="margin-top:14px"><strong>What we could not see from here:</strong> placement-mix history before March 2026, bid-cap changes over time, and how LQS weights debt size. Those are the natural follow-ups with Freedom's media team — we don't run this account's media, so everything in the <a href="#playbook">recovery ideas</a> is framed as a joint conversation, not a unilateral fix.</p>
+  </div></section>
+
+  <section id="creative"><div class="wrap">
+    <div class="eyebrow">Question 2 — what can creative do? · 130 ads re-watched &amp; AI-classified</div>
+    <h2>The creative factors that travel with margin</h2>
+    <p class="lead">Every chart: close-weighted margin per enrollment (total margin ÷ closes) for full-year 2025, ads with ≥3 closes, groups with ≥20 closes. The grey bar re-computes each group <strong>without J521V1B</strong>, the #1 ad — so you can see nothing below leans on it. <span class="tier">T2</span> (creative tags are AI-classified at moderate reliability).</p>
+    <div class="card" style="margin-top:18px">
+      <h3>Which creative differences are statistically real?</h3>
+      <div class="sub">Bootstrap test on the close-weighted margin gap (4,000 resamples at the ad level). "Significant" = the 95% interval excludes zero.</div>
+      <table><thead><tr><th>Contrast</th><th class="num">Margin gap / close</th><th class="num">95% interval</th><th>Read</th></tr></thead><tbody id="sigBody"></tbody></table>
+    </div>
+    <div class="grid2" style="margin-top:22px">
+      <div class="card"><h3>Messaging frame</h3><div class="sub">The strongest lever in the account (p=0.001) — and the most under-built: 3 outcome-framed concepts vs 48 problem-framed. The winning register is confident relief — "turn 3 payments into 1, protect your savings" — not pain and rescue.</div><div class="chart-wrap" style="height:170px"><canvas id="cMotiv"></canvas></div></div>
+      <div class="card"><h3>Offer mechanic</h3><div class="sub">Quiz/calculator-led ads earn a fraction of straight offers (p=0.003) and their leads close 25% worse (5.1% vs 6.8%). Working hypothesis: the calculator sets a "quick savings" expectation the sales call has to unwind.</div><div class="chart-wrap" style="height:170px"><canvas id="cOffer"></canvas></div></div>
+      <div class="card"><h3>Hook archetype</h3><div class="sub">Before-After story openers are #1 (787 closes); testimonial-style openers are last (p=0.015 against Before-After).</div><div class="chart-wrap" style="height:250px"><canvas id="cHook"></canvas></div></div>
+      <div class="card"><h3>Voice</h3><div class="sub">A relatable peer creator telling their own story carries the portfolio (928 closes). Actor reads are the weak lane (gap p=0.074 — directional).</div><div class="chart-wrap" style="height:250px"><canvas id="cVoice"></canvas></div></div>
+      <div class="card"><h3>Script structure</h3><div class="sub">Outcome-led stories (OS) dominate at scale — 808 closes at +$716.</div><div class="chart-wrap" style="height:250px"><canvas id="cFormula"></canvas></div></div>
+      <div class="card"><h3>Video vs static</h3><div class="sub">Video earns more per close but the gap is NOT statistically solid (p=0.22) — and statics netted +$104k in 2025. Statics are a legitimate cheap-reach lane, not a banned one.</div><div class="chart-wrap" style="height:160px"><canvas id="cType"></canvas></div></div>
+    </div>
+    <p class="lead" style="margin-top:18px"><strong>The margin recipe, in one line:</strong> a relatable peer creator (or clean text/GFX), opening on a Before-After story, framed as confident relief — "simplify &amp; protect," not crisis — with a straight offer and a sound-off-legible benefit banner. The losers to retire: testimonial-style openers, straight actor reads, and calculator-gated offers.</p>
   </div></section>
 
   <section id="anchorx"><div class="wrap">
-    <div class="eyebrow">Autopsy of the June headline</div>
-    <h2>The debt anchor was never the targeting</h2>
-    <p class="lead">The June read: "the dollar figure a creative leads with predicts the credit profile it pulls" (anchor↔FICO +0.60 on 14 ads). The full-year panel — 34 signal ads with a detectable on-screen/spoken debt figure — says no. <span class="tier">T1</span></p>
+    <div class="eyebrow">The most tempting non-lever</div>
+    <h2>The on-screen debt number doesn't pick your audience</h2>
+    <p class="lead">A natural theory — one we took seriously — is that the dollar figure an ad leads with ("I had $42,000 in credit card debt") screens its own audience: bigger number, more qualified viewer, more margin. We extracted the debt figure from all 34 signal ads that show one. <strong>It correlates with nothing</strong> — not the credit profile of the leads, not their debt, not margin. <span class="tier">T1</span></p>
     <div class="grid2" style="margin-top:18px">
       <div class="card">
-        <h3>Anchor size ↔ outcomes, 2025 vs 2026 claim</h3>
-        <div class="sub">2025 (n=34) in teal; the June claim (n=14) in grey.</div>
-        <div class="chart-wrap" style="height:240px"><canvas id="cAnchor"></canvas></div>
+        <h3>Anchor size ↔ lead profile &amp; outcomes (n=34)</h3>
+        <div class="sub">All four bars are statistical zero.</div>
+        <div class="chart-wrap" style="height:220px"><canvas id="cAnchor"></canvas></div>
       </div>
       <div class="card">
-        <h3>Margin by anchor band (2025)</h3>
-        <div class="sub">Close-weighted MPU. "None" is inflated by J521V1B; ex-J521 the no-anchor cohort drops to +$258 — anchored ads actually edge it out.</div>
-        <div class="chart-wrap" style="height:240px"><canvas id="cAnchorBand"></canvas></div>
+        <h3>Margin by anchor band</h3>
+        <div class="sub">The "none" group is inflated by J521V1B (which shows no number at all); without it, anchored ads actually edge ahead (+$521 vs +$258, p=0.056 — directional).</div>
+        <div class="chart-wrap" style="height:220px"><canvas id="cAnchorBand"></canvas></div>
       </div>
     </div>
-    <p class="lead" style="margin-top:14px">Read: <strong>use whatever dollar figure serves the story — it is not a targeting lever in either direction.</strong> The #1 ad both years (J521V1B) shows no anchor at all; the high-anchor cohort is fine (+$521 on 934 closes); anchor size correlates with nothing (|r| ≤ 0.14 across FICO, utilization, ABI, MPU, close rate). The June correlation was 14 ads inside a recession. <span class="tier">T1</span></p>
+    <p class="lead" style="margin-top:14px"><strong>Practical read: use whatever dollar figure serves the story.</strong> Don't raise calculator defaults, rewrite qualifiers, or kill concepts over the number on screen expecting margin to move — the #1 ad in the account shows no number at all, and high-anchor ads (934 closes) perform fine.</p>
+  </div></section>
+
+  <section id="playbook"><div class="wrap">
+    <div class="eyebrow">If the pressure is the ecosystem — ideas worth testing</div>
+    <h2>Recovery ideas beyond the brief</h2>
+    <p class="lead">The decline is mostly priced-in economics, so creative alone won't fully reverse it. These are test ideas that point delivery at where margin demonstrably lives — all <span class="tier">T3</span> (hypotheses with supporting data, not proven findings), and all joint conversations with Freedom's media team since we don't run this account's media.</p>
+    <div style="margin-top:18px">
+      <div class="rec"><div class="h"><span class="ptag p2">Media · test</span> Express the 45+ skew in delivery, not just casting</div><p>Margin concentrates in older delivery: among shared variants, the profitable ads delivered 58–79% of spend to 45+, while the two worst margin-losers delivered youngest (50–53%) — yet every live ad set targets 18–65 broad with Advantage+ free to expand toward cheap young inventory. Worth a test cell: duplicate the proven recipe into a 35+/45+ ad-set split (Meta retired manual bid multipliers; age-min cells are the available instrument) and read backend MPU per cell. Caveat: age-pull didn't predict margin across the full 2025 panel (corr ≈ 0) — this is a guardrail against the cheap-young drift the funnel shows, not a silver bullet.</p><div class="ann">Owner: Freedom media + TS (we supply the creative pairs). 45+ data: Meta demo splits since Feb 2026.</div></div>
+      <div class="rec"><div class="h"><span class="ptag p2">Media · ask</span> Check whether the LQS optimization event sees debt size</div><p>The account already bids against a lead-quality score — smart. But MPU's second term is enrolled debt (+0.51 with margin), and if LQS weights "likely to submit" more than "carrying $20k+," the algorithm is optimizing to the wrong half of the formula while debt-per-close slides (−7% YoY). The ask: how is LQS built, and can estimated debt load (or predicted ABI) be weighted in — or a value-based event tested against it?</p><div class="ann">Owner: Freedom analytics/media; TS flags it. This is the highest-leverage media question in the deck.</div></div>
+      <div class="rec"><div class="h"><span class="ptag p2">Media · joint</span> Pressure-test the cheap-lead inflow</div><p>The funnel's tell — platform leads 15% cheaper while backend leads got 12% more expensive — says lead quality diluted. Three places to look with Freedom: placement mix (cheap surfaces like Audience Network/right-rail trade thin), Advantage+ expansion share, and whether quiz-led ads (which close 25% worse) are feeding the dilution. We can supply the per-ad backend mapping; Freedom has the placement and bid history.</p><div class="ann">Owner: joint. We'd suggest a 60-minute working session with Sam's team — happy to drive it.</div></div>
+    </div>
   </div></section>
 
   <section id="noise"><div class="wrap">
-    <div class="eyebrow">TJ's caveat, quantified</div>
-    <h2>Sibling variants of the same concept land on opposite sides of zero</h2>
-    <p class="lead">Same concept, same footage family, different variant — median MPU spread <strong id="nsMed"></strong> per close across <span id="nsFam"></span> families (vs portfolio std dev <span id="nsStd"></span>). This is why single-variant MPU reads — including several June "winners" and "losers" — shouldn't drive briefs. <span class="tier">T1</span></p>
+    <div class="eyebrow">How to read MPU without fooling ourselves</div>
+    <h2>Sibling ads of the same concept land on opposite sides of zero</h2>
+    <p class="lead">Median margin spread between variants of the <em>same concept</em>: <strong id="nsMed"></strong> per close across <span id="nsFam"></span> families — twice the portfolio's standard deviation (<span id="nsStd"></span>). At 5–9% close rates on $100+ leads, a handful of enrollments swings per-close margin ±$1,500. That's arithmetic, not creative quality. <span class="tier">T1</span></p>
     <div id="famList" style="margin-top:18px"></div>
     <div class="callout teal">
       <div class="ic">📏</div>
       <div>
-        <div class="t">Operating rule</div>
-        <p>No MPU verdict under ~20 closes. Concepts get judged at the <strong>family level</strong> (sum margin ÷ sum closes across variants), attributes at the <strong>cohort level</strong>. Per-enrollment margin swings ±$1,500 on a handful of enrollments — that's the unit economics of 5–9% close rates on $100+ leads, not creative quality. (Sam's adset-level rule, applied to creative.)</p>
-      </div>
-    </div>
-  </div></section>
-
-  <section id="age"><div class="wrap">
-    <div class="eyebrow">Testing TJ's delivery hypothesis</div>
-    <h2>Does "delivers older" explain MPU? Partly at the extremes — not overall</h2>
-    <p class="lead">Hypothesis: sound-off design and calm tone might just be proxies for ads that deliver to older audiences. Test: 45+ spend share per variant (Meta demo data, available from Feb 2026 — used as a proxy for each creative's age-pull) vs margin. <span class="tier">T3</span></p>
-    <div class="grid2" style="margin-top:18px">
-      <div class="card">
-        <h3>45+ delivery share vs 2026 margin per close</h3>
-        <div class="sub">n=11 shared variants. The two worst losers do skew young — but J655V1A delivered old and lost worst.</div>
-        <div class="chart-wrap" style="height:280px"><canvas id="cAge"></canvas></div>
-      </div>
-      <div class="card">
-        <h3>Verdict: directional at the extremes, not a driver</h3>
-        <table><thead><tr><th>Panel</th><th class="num">corr(45+ share, MPU)</th><th class="num">n</th></tr></thead>
-        <tbody id="ageBody"></tbody></table>
-        <p style="font-size:13px;color:var(--ink-soft);margin-top:10px">The two worst 2026 losers (J742V1D shame-static, J716V1C BoF gfx) delivered youngest (50–53% to 45+ vs 68–79% for winners) — consistent with the hypothesis. But across the matched 2025 panel the correlation is ~0.00, and the biggest 2026 loser delivered old. <strong>Read: young delivery is a symptom worth watching on distress-coded creative, not a standalone driver.</strong> Caveat: age data is 2026-only; survivor-biased panel.</p>
+        <div class="t">Operating rule for everyone using this data</div>
+        <p>No MPU verdict under ~20 closes. Judge concepts at the <strong>family level</strong> (sum margin ÷ sum closes across variants), creative attributes at the <strong>cohort level</strong>, and audiences at the <strong>ad-set level</strong>. A single variant's MPU — good or bad — is not a brief.</p>
       </div>
     </div>
   </div></section>
 
   <section id="concentration"><div class="wrap">
-    <div class="eyebrow">Volume × MPU = the P&amp;L</div>
-    <h2>Concentration is real — but 2025 was a portfolio, not one ad</h2>
-    <p class="lead">J521V1B is 38% of 2025 net margin (vs 71% of 2026 YTD's) and the top 5 are 63%. Defending the engine still matters; the difference is 2025 proves the recipe generalizes beyond it. <span class="tier">T1</span></p>
+    <div class="eyebrow">Where the margin sits</div>
+    <h2>Concentrated, but a real portfolio</h2>
+    <p class="lead">J521V1B (a peer-creator Before-After video) is 38% of 2025 net margin, and the top five are 63% — but nine other concepts cleared +$25k each on the same recipe. Defending the engine and widening the bench are the same motion. <span class="tier">T1</span></p>
     <div class="card" style="margin-top:18px">
       <h3>Total 2025 margin by variant (top 12 + bottom 6)</h3>
-      <div class="sub">MPU × closes. Five of the top ten are non-J521 concepts sharing the same recipe.</div>
+      <div class="sub">Margin per close × closes.</div>
       <div class="chart-wrap" style="height:440px"><canvas id="cLeaders"></canvas></div>
     </div>
   </div></section>
@@ -322,19 +328,18 @@ td.pos{color:var(--pos)} td.neg{color:var(--neg)}
   <section id="evidence"><div class="wrap">
     <div class="eyebrow">Playable evidence</div>
     <h2>The assets behind the numbers</h2>
-    <p class="lead">2025's margin makers and the instructive sibling losers. Hover/scrub to play. Where the variant also ran in 2026, both years' MPU are shown.</p>
+    <p class="lead">2025's margin makers and the instructive sibling losers. Hover/scrub to play. Where the ad also ran in 2026, both years' margin per close are shown — note how every 2026 figure sits far below its 2025 twin.</p>
     <div class="ad-grid" id="adGrid" style="margin-top:20px"></div>
   </div></section>
 
   <section id="recs"><div class="wrap">
     <div class="eyebrow">Recommendations</div>
-    <h2>What to brief, what to stop briefing, what to flag</h2>
+    <h2>The MPU recovery plan</h2>
     <div style="margin-top:18px">
-      <div class="rec p0"><div class="h"><span class="ptag p0">P0</span> Build the outcome-frame grid (the under-built proven lane)</div><p>Outcome/"simplify &amp; protect" framing beats problem/pain framing even with J521 removed (+$728 vs +$450 per close) — yet the portfolio is 48 problem concepts to 3 outcome concepts. Brief a structured family: peer-creator video, Before-After structure, "3 payments → 1 / no loans / protect your savings" body, new openers and talent. This is the highest-evidence open lane in the account.</p><div class="ann">Owner: TS creative. Judge at family level after ~20 closes.</div></div>
-      <div class="rec"><div class="h"><span class="ptag p1">P1</span> Keep the engine fed (MORE/ADAPT, not reinvention)</div><p>J521V1B remains the engine (38% of 2025 net, still #1 in 2026). The 2025 panel shows its recipe scaled to 9 other top-10 makers (J613, J568, J599, J590, J602 families). Continue MOREs and adapts of the peer-voice Before-After family; protect against fatigue with opener/talent refreshes rather than format pivots.</p><div class="ann">Owner: TS creative.</div></div>
-      <div class="rec"><div class="h"><span class="ptag p1">P1</span> Retire two briefing beliefs; retire two weak lanes</div><p><strong>Stop briefing the debt anchor as targeting</strong> — use any figure that serves the story. <strong>Stop avoiding cheap-CPL concepts on margin grounds</strong> — 2025's sub-$110-CPL ads made 2.2× the margin. And retire the both-years losers as lead structures: Testimonial-Lead openers and straight actor reads.</p><div class="ann">Owner: TS creative + strategy. (The June guidance to raise calculator anchors should be paused pending an isolated test.)</div></div>
-      <div class="rec"><div class="h"><span class="ptag p2">P2</span> Rework quiz/calculator-gated offers</div><p>Quiz-led ads earned +$92/close vs +$636 for straight product offers, and their leads closed 25% worse (5.1% vs 6.8%, 197 vs 1,567 closes). One hypothesis worth testing: the mechanic sets a "quick fix" expectation the sales call then has to unwind. If we keep quizzes, frame them as program qualification, not savings calculators. <span class="tier">T2</span></p><div class="ann">Owner: TS creative; validate on the next quiz adapt before scaling.</div></div>
-      <div class="rec p3"><div class="h"><span class="ptag p2">P2</span> Take the margin-recession question to Sam jointly</div><p>The dominant 2026 fact is account-level: CPL +12% and enrolled debt per close −7% compressed margin per close 84% on identical creative. Worth a joint look at adset-grain MPU, lead pricing, and whether who's in-market shifted (macro debt cycle). Creative can lean on the ABI side — heavier-debt recruiting — but can't price the auction. We'd suggest running the adset-grain validation with Sam's data; happy to drive it.</p><div class="ann">Owner: joint TS + Freedom analytics.</div></div>
+      <div class="rec p0"><div class="h"><span class="ptag p0">Brief now</span> Build the outcome-frame family — the strongest underused lever</div><p>Outcome/relief framing is the account's most statistically solid creative lever (+$279/close ex-engine, p=0.001) and its emptiest lane: 3 concepts vs 48 problem-framed. Brief a structured family — peer creator, Before-After open, "3 payments → 1 / no loans / protect your savings" body, straight offer, sound-off banner — with new talent and openers. Judge at family level after ~20 closes.</p><div class="ann">Owner: TS creative.</div></div>
+      <div class="rec"><div class="h"><span class="ptag p1">Brief now</span> Keep the engine fed; aim recruiting at debt load</div><p>Continue iterations and adapts of the proven peer-creator Before-After family (J521, J613, J568, J599, J590 molds — refresh openers/talent, don't pivot formats). And since enrolled debt is half the MPU formula (+0.51), lean the casting and story details toward heavier real debt loads — "$20k across three cards," consolidation-weary, employed — the stuck-but-solvent recruit who both closes and carries margin.</p><div class="ann">Owner: TS creative.</div></div>
+      <div class="rec"><div class="h"><span class="ptag p1">Stop / fix</span> Retire the proven margin-losers</div><p><strong>Rework quiz/calculator-led offers</strong> (+$92/close vs +$636, leads close 25% worse, p=0.003) — if a quiz stays, frame it as program qualification, not a savings calculator. <strong>Retire testimonial-style openers and straight actor reads</strong> as lead structures (p=0.015 and p=0.074 against the winners). And <strong>stop optimizing briefs around the on-screen debt number, lead price, or FICO-prime targeting</strong> — none of them move margin.</p><div class="ann">Owner: TS creative + strategy.</div></div>
+      <div class="rec p3"><div class="h"><span class="ptag p2">Raise with Freedom</span> The three media conversations</div><p>(1) A 35+/45+ delivery test cell on the proven recipe — the setup is 18–65 broad while margin lives older. (2) Whether the LQS bidding event sees debt size — if not, the algorithm optimizes the wrong half of MPU. (3) A joint look at the cheap-lead inflow (placement mix, Advantage+ expansion, quiz-fed leads) behind the platform-vs-backend CPL divergence. Detail in <a href="#playbook">recovery ideas</a>.</p><div class="ann">Owner: joint TS + Freedom media/analytics — we'd suggest a working session with Sam's team and can drive it.</div></div>
     </div>
   </div></section>
 
@@ -342,18 +347,18 @@ td.pos{color:var(--pos)} td.neg{color:var(--neg)}
     <div class="eyebrow">Methodology, confidence &amp; limitations</div>
     <h2>How this was built — and what would raise confidence</h2>
     <p class="foot" style="margin-top:14px">
-      <b>Sources &amp; grain.</b> 2025: Sam's authoritative per-variant full-year passback ("2025 YTD Performance By Creative Total", 616 variants, $3.78M) merged with Snowflake asset URLs; <b>MPU is Sam's pre-computed margin per enrollment</b> and reproduces as ≈ 9.7% × ABI − CPA (r = 0.99). CPA = cost per close (~$1,800), not CPL (~$113). 2026 YTD: the June dash dataset (215 assets, $1.93M, Launches-freedom-financial-2026-06-02). All 2026 comparisons use that dash's published aggregates.<br><br>
-      <b>Classification.</b> 130 of 616 ads (every ad ≥$1k spend with a recoverable asset, 83% of 2025 spend) were re-watched by the 5-stage Gemini + Claude classifier (hook, voice, motivator, formula, format, transcript; "moderate" reliability). Debt anchors were extracted from transcripts by pattern-match — crude but consistent across both years' methods.<br><br>
-      <b>Aggregation &amp; floors.</b> All cohort metrics are close-weighted (total margin ÷ closes), the correct aggregate for a per-enrollment number. Correlations use ads ≥5 closes (n=51, 85% of spend); attribute cohorts use ≥3 closes with a ≥20-close floor per group; every figure carries n and closes. Ex-J521V1B values shown or checked throughout (Brandon's bias concern) — no headline finding depends on it.<br><br>
-      <b>Comparability caveats.</b> 2026 is ~5 months in a compressed-margin regime — cross-year levels aren't comparable, directions are. Profile fields (FICO/HHI/utilization) are modeled/appended, ad-grain, and should be arbitrated at adset grain (Sam's rule). Age-delivery data exists only from Feb 2026; using it as a proxy for 2025 creatives assumes a creative's age-pull is stable (survivor-biased panel, n=11–15). 264 sub-$1k-spend ads (3% of spend, ~0–2 closes each) were left unclassified as statistical noise; 2025 asset files were unrecoverable for 43% of variants (15% of spend) — mostly older, low-spend ads.<br><br>
-      <b>Confidence.</b> <span class="tier">T1</span> descriptive · <span class="tier">T2</span> inferential (confounders named) · <span class="tier">T3</span> hypothesis to test. The replication scoreboard is T1 (it reports what each panel shows); the recruit-two-sided read and the quiz-expectation mechanism are T2; the age-proxy panel is T3.<br><br>
-      <b>Would raise confidence next.</b> Adset-grain re-aggregation with Sam · a 2024 panel (does the recipe replicate three-for-three?) · an isolated quiz-anchor test · hand-coded anchors on the top 50.
+      <b>Sources &amp; grain.</b> 2025: Sam's per-variant full-year passback ("2025 YTD Performance By Creative Total", 616 variants, $3.78M TS spend) — <b>MPU is Sam's pre-computed margin per enrollment</b>, reproducing as ≈ 9.7% × ABI − CPA (r = 0.99). CPA = cost per close (~$1,800), not cost per lead (~$113). 2026 YTD: the June classified dataset (215 assets, $1.93M). Meta-side funnel and setup: Snowflake (whole account, both years); note Meta and the backend count leads differently — cross-system gaps are read directionally.<br><br>
+      <b>Classification.</b> 130 of 616 ads — every 2025 ad ≥$1k spend with a recoverable asset file, 83% of spend — re-watched by a 5-stage Gemini + Claude classifier (hook, voice, framing, structure, offer, transcript; moderate reliability). On-screen debt figures extracted from transcripts by pattern match.<br><br>
+      <b>Aggregation &amp; floors.</b> Cohort metrics are close-weighted (total margin ÷ closes) — the correct aggregate for a per-enrollment number. Correlations use ads ≥5 closes (n=51, 85% of spend); attribute groups use ≥3 closes with a ≥20-close floor; every figure carries its n. Significance is a 4,000-draw bootstrap at the ad level. <b>Every chart shows an "excl. top ad" bar</b> — no finding leans on J521V1B.<br><br>
+      <b>Limitations.</b> Lead profile fields (FICO/income/utilization) are modeled and ad-grain — validate at ad-set grain. Age-delivery data exists only from Feb 2026 (used as a proxy for each creative's age-pull; survivor-biased, n=11–15). 264 sub-$1k ads (3% of spend) were left unclassified; asset files were unrecoverable for 43% of 2025 variants (15% of spend), mostly older low-spend ads. Placement-mix history before March 2026 isn't available to us.<br><br>
+      <b>Confidence.</b> <span class="tier">T1</span> descriptive · <span class="tier">T2</span> inferential (confounders named) · <span class="tier">T3</span> hypothesis to test. The three creative levers are bootstrap-significant T1/T2; the recruit-profile read and lead-dilution story are T2; the delivery-skew and LQS ideas are T3 tests.<br><br>
+      <b>Would raise confidence next.</b> Ad-set-grain validation with Sam · a 2024 panel (three-year replication) · the LQS construction answer · an isolated 35+/45+ delivery test · hand-coded anchors on the top 50.
     </p>
   </div></section>
 </div>
 
 <script>
-const DATA = {"kpis":{"spend25":3777440.0,"leads25":33325,"closes25":2075,"tm25":1125366.0,"wmpu25":542.3450602409639,"cpa25":1820.4530120481927,"cpl25":113.35153788447111,"cr25":6.22655663915979,"n_ads25":616,"n_sig":51,"j521_share25":37.77899812150003,"top5_share25":62.518505090788246,"pos_tm":1326595.0,"neg_tm":-201229.0,"k26_spend":1928218,"k26_leads":15141,"k26_closes":918,"k26_net_margin":82023,"k26_n_ads":215,"k26_j521_share_pct":71,"k26_blended_cr":6.1,"k26_cpl":127,"k26_cpa":2100,"k26_wmpu":89},"drivers":[{"label":"CPA (cost per close)","r25":-0.5256563775702583,"rex":-0.5219811071040451,"r26":-0.718},{"label":"Close rate","r25":0.36232698775141226,"rex":0.3602505276921164,"r26":0.624},{"label":"ABI (enrolled debt)","r25":0.5116646937518419,"rex":0.5154990161865394,"r26":-0.003},{"label":"HHI","r25":0.2388645434361869,"rex":0.2354179741627143,"r26":-0.287},{"label":"CPL (cost per lead)","r25":-0.16246294809362605,"rex":-0.15779164948412608,"r26":-0.015},{"label":"FICO","r25":0.048016084580292044,"rex":0.04028337996072807,"r26":-0.261},{"label":"CC utilization","r25":0.02269985648722873,"rex":0.029132101097202524,"r26":0.146}],"cohorts":{"hook":[{"label":"Before-After","ads":14,"closes":787,"spend":1108011.0,"wmpu":729.9034307496823,"tm":574434.0,"cr":7.2823170167484035,"cpa":1407.8919949174078,"abi":21087.471410419315,"util":70.09719626168224,"fico":609.1901545294717,"wmpu_ex_j521":540.8768115942029,"wmpu26":225},{"label":"Contrast-Reveal","ads":3,"closes":197,"spend":367677.0,"wmpu":618.8071065989848,"tm":121905.0,"cr":5.376637554585153,"cpa":1866.3807106598986,"abi":24146.76649746193,"util":70.51896834061137,"fico":606.170305676856,"wmpu_ex_j521":618.8071065989848,"wmpu26":null},{"label":"UGC-Native","ads":7,"closes":174,"spend":333204.0,"wmpu":580.7011494252873,"tm":101042.0,"cr":6.507105459985041,"cpa":1914.9655172413793,"abi":24575.850574712644,"util":68.62053103964097,"fico":611.8863126402393,"wmpu_ex_j521":580.7011494252873,"wmpu26":50},{"label":"Curiosity-Gap","ads":20,"closes":368,"spend":608081.0,"wmpu":472.14402173913044,"tm":173749.0,"cr":6.504065040650407,"cpa":1652.3940217391305,"abi":20900.266304347828,"util":70.87212796041003,"fico":602.3513609049133,"wmpu_ex_j521":472.14402173913044,"wmpu26":-65},{"label":"Testimonial-Lead","ads":5,"closes":216,"spend":482322.0,"wmpu":171.20833333333334,"tm":36981.0,"cr":5.2734375,"cpa":2232.972222222222,"abi":23140.291666666668,"util":71.29777832031249,"fico":605.6103515625,"wmpu_ex_j521":171.20833333333334,"wmpu26":-216}],"voice":[{"label":"V-NO-VOICE","ads":9,"closes":147,"spend":210623.0,"wmpu":692.2380952380952,"tm":101759.0,"cr":7.577319587628866,"cpa":1432.8095238095239,"abi":20862.598639455784,"util":74.04443298969072,"fico":596.9288659793815,"wmpu_ex_j521":692.2380952380952,"wmpu26":105},{"label":"V-UGC-PEER","ads":17,"closes":928,"spend":1441868.0,"wmpu":689.2855603448276,"tm":639657.0,"cr":7.031368389149871,"cpa":1553.7370689655172,"abi":21979.686422413793,"util":69.55317472344294,"fico":610.0059099863615,"wmpu_ex_j521":514.4004796163069,"wmpu26":220},{"label":"V-BRAND","ads":3,"closes":120,"spend":207724.0,"wmpu":561.25,"tm":67350.0,"cr":6.185567010309279,"cpa":1731.0333333333333,"abi":22243.275,"util":72.4476288659794,"fico":600.3984536082475,"wmpu_ex_j521":561.25,"wmpu26":23},{"label":"V-CUSTOMER","ads":3,"closes":220,"spend":485598.0,"wmpu":408.6090909090909,"tm":89894.0,"cr":5.056308894507009,"cpa":2207.2636363636366,"abi":25076.263636363637,"util":68.65316019305907,"fico":611.1755918179729,"wmpu_ex_j521":408.6090909090909,"wmpu26":164},{"label":"V-ACTOR","ads":18,"closes":298,"spend":500956.0,"wmpu":251.44630872483222,"tm":74931.0,"cr":6.091578086672118,"cpa":1681.0604026845638,"abi":19519.879194630874,"util":72.14372444807849,"fico":600.05723630417,"wmpu_ex_j521":251.44630872483222,"wmpu26":14}],"motivator":[{"label":"M-OUTCOME","ads":3,"closes":605,"spend":816657.0,"wmpu":815.8942148760331,"tm":493616.0,"cr":7.794382891007472,"cpa":1349.8462809917355,"abi":21238.641322314048,"util":69.72611440350425,"fico":611.9384179335223,"wmpu_ex_j521":728.3404255319149,"wmpu26":null},{"label":"M-PROBLEM","ads":48,"closes":1159,"spend":2111680.0,"wmpu":449.7713546160483,"tm":521285.0,"cr":5.998654313958904,"cpa":1821.9844693701466,"abi":22284.819672131147,"util":70.60543967703536,"fico":605.0115418456602,"wmpu_ex_j521":449.7713546160483,"wmpu26":null}],"funnel":[{"label":"Mid Funnel","ads":26,"closes":1239,"spend":1995190.0,"wmpu":595.0056497175141,"tm":737212.0,"cr":6.528612077141954,"cpa":1610.322841000807,"abi":21655.34786117837,"util":70.61061228791233,"fico":606.7966065971125,"wmpu_ex_j521":428.65384615384613,"wmpu26":166},{"label":"Top Funnel","ads":22,"closes":505,"spend":876482.0,"wmpu":547.7009900990099,"tm":276589.0,"cr":6.573808903931268,"cpa":1735.6079207920793,"abi":22369.48910891089,"util":69.4587086696173,"fico":607.6187190835719,"wmpu_ex_j521":547.7009900990099,"wmpu26":9},{"label":"Bottom Funnel","ads":3,"closes":20,"spend":56665.0,"wmpu":55.0,"tm":1100.0,"cr":4.7281323877068555,"cpa":2833.25,"abi":27495.8,"util":75.06335697399527,"fico":604.6832151300237,"wmpu_ex_j521":55.0,"wmpu26":-122}],"format_bucket":[{"label":"Messaging-Hero Statics","ads":6,"closes":50,"spend":70904.0,"wmpu":689.1,"tm":34455.0,"cr":10.040160642570282,"cpa":1418.08,"abi":20434.94,"util":74.49076305220883,"fico":593.433734939759,"wmpu_ex_j521":689.1,"wmpu26":null},{"label":"UGC Testimonial Video","ads":20,"closes":1020,"spend":1670244.0,"wmpu":659.2686274509804,"tm":672454.0,"cr":6.7751577548987045,"cpa":1637.4941176470588,"abi":22371.480392156864,"util":69.24908003985387,"fico":611.2334772500831,"wmpu_ex_j521":485.85854616895875,"wmpu26":null},{"label":"Product-Hero Statics","ads":2,"closes":101,"spend":136055.0,"wmpu":625.950495049505,"tm":63221.0,"cr":6.8474576271186445,"cpa":1347.079207920792,"abi":19867.049504950493,"util":71.99016949152542,"fico":598.8196610169491,"wmpu_ex_j521":625.950495049505,"wmpu26":null},{"label":"Produced Infomercial Video","ads":6,"closes":159,"spend":264490.0,"wmpu":545.433962264151,"tm":86724.0,"cr":6.179556937427128,"cpa":1663.4591194968552,"abi":21661.006289308178,"util":72.72071511853869,"fico":599.0820054411193,"wmpu_ex_j521":545.433962264151,"wmpu26":null},{"label":"Messaging-Hero Script-Length Statics","ads":2,"closes":69,"spend":109482.0,"wmpu":506.17391304347825,"tm":34926.0,"cr":6.073943661971831,"cpa":1586.695652173913,"abi":20906.391304347828,"util":75.27957746478874,"fico":591.8169014084507,"wmpu_ex_j521":506.17391304347825,"wmpu26":null},{"label":"UGC Organic Content Video","ads":9,"closes":192,"spend":340405.0,"wmpu":420.8072916666667,"tm":80795.0,"cr":6.074027206580196,"cpa":1772.9427083333333,"abi":21862.239583333332,"util":68.88263207845617,"fico":608.113255298956,"wmpu_ex_j521":420.8072916666667,"wmpu26":null},{"label":"Messaging-Hero - Short-Form Organic Statics","ads":4,"closes":82,"spend":151453.0,"wmpu":137.23170731707316,"tm":11253.0,"cr":6.793703396851698,"cpa":1846.9878048780488,"abi":19267.841463414636,"util":76.5582435791218,"fico":592.7100248550124,"wmpu_ex_j521":137.23170731707316,"wmpu26":null}],"formula":[{"label":"PS","ads":6,"closes":63,"spend":95069.0,"wmpu":828.5079365079365,"tm":52196.0,"cr":7.420494699646643,"cpa":1509.031746031746,"abi":22640.84126984127,"util":72.14275618374559,"fico":600.7997644287396,"wmpu_ex_j521":828.5079365079365,"wmpu26":null},{"label":"OS","ads":12,"closes":808,"spend":1168313.0,"wmpu":715.6101485148515,"tm":578213.0,"cr":7.4094452086199,"cpa":1445.9319306930693,"abi":21170.841584158417,"util":70.41396607060979,"fico":608.2249426868409,"wmpu_ex_j521":515.3569023569023,"wmpu26":null},{"label":"PAS+","ads":12,"closes":277,"spend":485877.0,"wmpu":608.942238267148,"tm":168677.0,"cr":6.711897261933608,"cpa":1754.0685920577616,"abi":23135.007220216605,"util":67.89071965107826,"fico":612.9784346983281,"wmpu_ex_j521":608.942238267148,"wmpu26":null},{"label":"OAS+","ads":8,"closes":123,"spend":204772.0,"wmpu":397.5040650406504,"tm":48893.0,"cr":5.913461538461538,"cpa":1664.8130081300812,"abi":20637.837398373984,"util":71.98120192307692,"fico":599.5826923076924,"wmpu_ex_j521":397.5040650406504,"wmpu26":null},{"label":"PAS&#43;","ads":6,"closes":339,"spend":713490.0,"wmpu":353.023598820059,"tm":119675.0,"cr":5.041641879833433,"cpa":2104.690265486726,"abi":23931.578171091445,"util":69.97482153480071,"fico":608.0309339678763,"wmpu_ex_j521":353.023598820059,"wmpu26":null},{"label":"Static-Only","ads":4,"closes":113,"spend":182936.0,"wmpu":328.12389380530976,"tm":37078.0,"cr":6.558328496807893,"cpa":1618.9026548672566,"abi":19437.088495575223,"util":73.83592571096925,"fico":597.4091700522345,"wmpu_ex_j521":328.12389380530976,"wmpu26":null}],"type":[{"label":"video","ads":38,"closes":1488,"spend":2489931.0,"wmpu":609.7728494623656,"tm":907342.0,"cr":6.460296096904441,"cpa":1673.3407258064517,"abi":22353.247983870966,"util":69.61467893891374,"fico":609.2071375852038,"wmpu_ex_j521":493.54145342886386,"wmpu26":170},{"label":"static","ads":13,"closes":276,"spend":438406.0,"wmpu":389.70652173913044,"tm":107559.0,"cr":6.814814814814815,"cpa":1588.427536231884,"abi":19622.648550724636,"util":74.55479012345678,"fico":594.4261728395062,"wmpu_ex_j521":389.70652173913044,"wmpu26":-118}],"offer":[{"label":"OT-PRODUCT","ads":43,"closes":1567,"spend":2491249.0,"wmpu":636.0835992342055,"tm":996743.0,"cr":6.756348898374509,"cpa":1589.8206764518188,"abi":21843.29164007658,"util":70.470887767861,"fico":606.842323114733,"wmpu_ex_j521":541.279356060606,"wmpu26":null},{"label":"OT-QUIZ","ads":8,"closes":197,"spend":437088.0,"wmpu":92.1725888324873,"tm":18158.0,"cr":5.06426735218509,"cpa":2218.720812182741,"abi":22583.989847715737,"util":69.65308483290488,"fico":607.9177377892031,"wmpu_ex_j521":92.1725888324873,"wmpu26":null}],"anchor":[{"label":"mid ($15-30k)","ads":4,"closes":44,"spend":76643.0,"wmpu":723.2727272727273,"tm":31824.0,"cr":6.727828746177369,"cpa":1741.8863636363637,"abi":23544.204545454544,"util":72.61192660550458,"fico":603.1177370030581,"wmpu_ex_j521":723.2727272727273,"wmpu26":null},{"label":"none","ads":17,"closes":786,"spend":1101275.0,"wmpu":631.1145038167939,"tm":496056.0,"cr":7.268355835028667,"cpa":1401.113231552163,"abi":20100.992366412214,"util":70.75083225448493,"fico":606.4886258553727,"wmpu_ex_j521":257.83272727272725,"wmpu26":null},{"label":"high ($30k+)","ads":30,"closes":934,"spend":1750419.0,"wmpu":521.4357601713062,"tm":487021.0,"cr":5.981428113992956,"cpa":1874.110278372591,"abi":23385.609207708778,"util":69.98361191162346,"fico":607.5111751520974,"wmpu_ex_j521":521.4357601713062,"wmpu26":null}],"production":[{"label":"native","ads":35,"closes":1493,"spend":2520707.0,"wmpu":577.2016075016745,"tm":861762.0,"cr":6.469645101182995,"cpa":1688.3503014065639,"abi":22166.84058941728,"util":70.00315032283227,"fico":608.8887203709321,"wmpu_ex_j521":444.6130346232179,"wmpu26":null},{"label":"elevated","ads":15,"closes":214,"spend":323524.0,"wmpu":544.6028037383178,"tm":116545.0,"cr":6.912144702842377,"cpa":1511.7943925233644,"abi":20495.41121495327,"util":71.53976098191215,"fico":596.420865633075,"wmpu_ex_j521":544.6028037383178,"wmpu26":null}]},"noise_families":[{"job":"J521","variants":[{"v":"J521V1D","mpu":1863.0,"closes":6},{"v":"J521V1B","mpu":832.0,"closes":511},{"v":"J521V1A","mpu":-68.0,"closes":12},{"v":"J521V1C","mpu":-385.0,"closes":21}]},{"job":"J547","variants":[{"v":"J547V1B","mpu":1756.0,"closes":14},{"v":"J547V1A","mpu":-377.0,"closes":15}]},{"job":"J545","variants":[{"v":"J545V1A","mpu":1604.0,"closes":14},{"v":"J545V1B","mpu":1541.0,"closes":5},{"v":"J545V1D","mpu":192.0,"closes":134}]},{"job":"J602","variants":[{"v":"J602V1D","mpu":1396.0,"closes":26},{"v":"J602V1C","mpu":559.0,"closes":11},{"v":"J602V1B","mpu":-296.0,"closes":12}]},{"job":"J680","variants":[{"v":"J680V1A","mpu":1299.0,"closes":13},{"v":"J680V1B","mpu":135.0,"closes":14}]},{"job":"J679","variants":[{"v":"J679V1D","mpu":1093.0,"closes":20},{"v":"J679V1B","mpu":814.0,"closes":28},{"v":"J679V1C","mpu":-703.0,"closes":15}]},{"job":"J694","variants":[{"v":"J694V1C","mpu":1003.0,"closes":8},{"v":"J694V1B","mpu":-139.0,"closes":12}]},{"job":"J613","variants":[{"v":"J613V1D","mpu":966.0,"closes":88},{"v":"J613V1C","mpu":641.0,"closes":66},{"v":"J613V1A","mpu":-562.0,"closes":5}]},{"job":"J655","variants":[{"v":"J655V1A","mpu":808.0,"closes":85},{"v":"J655V1B","mpu":-1669.0,"closes":9}]},{"job":"J568","variants":[{"v":"J568V1D","mpu":775.0,"closes":102},{"v":"J568V1C","mpu":-2171.0,"closes":10}]}],"noise_stats":{"median_family_range":1692.0,"cohort_std":838.6052220391742,"n_families":11},"yoy":{"rows":[{"label":"Spend","v25":"$3.78M","v26":"$1.93M"},{"label":"Closes (enrollments)","v25":"2,075","v26":"918"},{"label":"Net margin","v25":"+$1,125k","v26":"+$82k"},{"label":"Margin per close","v25":"$542","v26":"$89"},{"label":"CPL","v25":"$113","v26":"$127"},{"label":"Blended close rate","v25":"6.2%","v26":"6.1%"},{"label":"CPA (cost per close)","v25":"$1,820","v26":"$2,100"},{"label":"Implied avg enrolled debt (ABI)","v25":"~$24.2k","v26":"~$22.5k"}],"shared":[{"v":"J521V1B","mpu25":832.0,"mpu26":350},{"v":"J679V1D","mpu25":1093.0,"mpu26":157},{"v":"J568V1D","mpu25":775.0,"mpu26":274},{"v":"J641V1B","mpu25":359.0,"mpu26":165},{"v":"J655V1A","mpu25":808.0,"mpu26":-757},{"v":"J686V1B","mpu25":124.0,"mpu26":37}]},"age_test":{"r_2025":-0.012499497582702355,"n_2025":15,"r_2026":0.3739476989212927,"n_2026":11,"panel26":[{"v":"J716V1C","share45":0.5,"mpu26":-377.0},{"v":"J742V1D","share45":0.53,"mpu26":-715.0},{"v":"J679V1D","share45":0.58,"mpu26":157.0},{"v":"J338V1B","share45":0.59,"mpu26":497.0},{"v":"J568V1D","share45":0.68,"mpu26":274.0},{"v":"J641V1B","share45":0.68,"mpu26":165.0},{"v":"J521V1B","share45":0.68,"mpu26":350.0},{"v":"J655V1A","share45":0.69,"mpu26":-757.0},{"v":"J753V1D","share45":0.76,"mpu26":167.0},{"v":"J686V1B","share45":0.79,"mpu26":37.0},{"v":"J711V1C","share45":0.79,"mpu26":324.0}]},"leaders":[{"label":"J521V1B","tm":425152.0},{"label":"J613V1D","tm":85008.0},{"label":"J568V1D","tm":79050.0},{"label":"J655V1A","tm":68680.0},{"label":"J599V1D","tm":45672.0},{"label":"J613V1C","tm":42306.0},{"label":"J590V1A","tm":41310.0},{"label":"J571V1B","tm":36594.0},{"label":"J602V1D","tm":36296.0},{"label":"J551V1D","tm":32480.0},{"label":"J641V1B","tm":26925.0},{"label":"J545V1D","tm":25728.0},{"label":"J568V1C","tm":-21710.0},{"label":"J655V1B","tm":-15021.0},{"label":"J679V1C","tm":-10545.0},{"label":"J546V1D","tm":-8889.0},{"label":"J521V1C","tm":-8085.0},{"label":"J662V1A","tm":-6774.0}],"anchor":{"n":34,"r_fico":-0.13510377759439687,"r_util":0.11511081598202864,"r_abi":-0.12253682365351165,"r_mpu":-0.04149800096902727,"r26":{"hi_mpu":-143,"lo_mpu":131,"r_fico":0.6,"r_util":-0.54,"r_abi":0.16,"r_mpu":-0.25}},"cards":[{"short":"J521V1B","name":"J521V1B_Videots_More3_SW1DebtUGC-Kellen-Refresh_091824_6608991096305","role":"ENGINE \u2014 38% of 2025 net margin","role_class":"engine","url":"https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6850799642105.mp4","mtype":"video","tm":425152.0,"mpu":832.0,"mpu26":350,"closes":511,"cr":7.98,"cpa":1300.0,"abi":20866.0,"spend":664507.0,"hook":"Before-After","voice":"V-UGC-PEER","motiv":"M-OUTCOME","formula":"OS","hooktext":"[SPOKEN] Here's how I went from paying off three different credit cards to just one low monthly amount. [ON-SCREEN] How I went from 3 credit card payments to 1 low monthly amount [ON-SCREEN] Paid advertisement, not a real customer testimonial."},{"short":"J613V1D","name":"J613V1D_Videots_More1_SW3Infomercial-MessagingUpdate-HeaderBlur-Applovin_050725_6749428589705","role":"Top-5 maker \u2014 infomercial WoT","role_class":"win","url":"https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6850799642905.mp4","mtype":"video","tm":85008.0,"mpu":966.0,"mpu26":null,"closes":88,"cr":7.38,"cpa":1698.0,"abi":24950.0,"spend":149465.0,"hook":"Curiosity-Gap","voice":"V-UGC-PEER","motiv":"M-PROBLEM","formula":"OS","hooktext":"[ON-SCREEN] Guess how he got rid of $43,512 of credit card debt [ON-SCREEN] freedom [ON-SCREEN] Freedom Debt Relief helped me [SPOKEN] Freedom helped me for just one low monthly payment. [ON-SCREEN] for just one low monthly payment [ON-SCREEN] Paid advertiseme"},{"short":"J568V1D","name":"J568V1D_Videots_Adapt3_SW3Infomercial-ThemvsUs_01292025_6627338658505","role":"Top-5 maker \u2014 VS split-screen","role_class":"win","url":"https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6850799643105.mp4","mtype":"video","tm":79050.0,"mpu":775.0,"mpu26":274,"closes":102,"cr":6.25,"cpa":1626.0,"abi":23067.0,"spend":165902.0,"hook":"Contrast-Reveal","voice":"V-BRAND","motiv":"M-PROBLEM","formula":"PAS&#43;","hooktext":"[ON-SCREEN] $40,000+ in credit card debt[ON-SCREEN] VS[ON-SCREEN] Freedom Debt Relief[ON-SCREEN] Drained savings[ON-SCREEN] 1 low monthly payment[ON-SCREEN] Extreme stress[ON-SCREEN] No upfront costs[ON-SCREEN] Strained relationships[ON-SCREEN] No loans requir"},{"short":"J655V1A","name":"J655V1A_Videots_New_SW1DebtUGC-ViralDebtGirl_072425_ 6816572959905","role":"+$69k in 2025 \u2192 \u2212$11k in 2026","role_class":"win","url":"https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6816572959905.mp4","mtype":"video","tm":68680.0,"mpu":808.0,"mpu26":-757,"closes":85,"cr":6.66,"cpa":2052.0,"abi":27648.0,"spend":174447.0,"hook":"UGC-Native","voice":"V-UGC-PEER","motiv":"M-PROBLEM","formula":"PAS+","hooktext":"[SPOKEN] I am the girl that's going viral for having over $40,000 in credit card debt. [ON-SCREEN] I am the girl that's going viral for having over $40K in credit card debt [SPOKEN] Here's how it happened."},{"short":"J599V1D","name":"J599V1D_Videots_Adapt3_SW3Infomercial-ShortForm-WOT-HappyResults_07/17/2025_6810692184305","role":"Top-10 maker \u2014 short-form WoT","role_class":"win","url":"https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6845475018505.mp4","mtype":"video","tm":45672.0,"mpu":692.0,"mpu26":null,"closes":66,"cr":6.59,"cpa":1737.0,"abi":24004.0,"spend":114663.0,"hook":"UGC-Native","voice":"V-ACTOR","motiv":"M-OUTCOME","formula":"OS","hooktext":"[ON-SCREEN] POV: You just resolved over $40,000 in credit card debt because Freedom Debt Relief negotiated your debt down with one low monthly payment [ON-SCREEN] Paid advertisement, not an actual customer testimonial, individual results will vary [ON-SCREEN] "},{"short":"J590V1A","name":"J590V1A_Videots_Adapt2_SW3Infomercial-ThenNowWoT_03122025_6667286334705","role":"Top-10 maker \u2014 Then/Now WoT","role_class":"win","url":"https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6860489605505.mp4","mtype":"video","tm":41310.0,"mpu":810.0,"mpu26":null,"closes":51,"cr":6.69,"cpa":1599.0,"abi":23738.0,"spend":81568.0,"hook":"Before-After","voice":"V-UGC-DEMO","motiv":"M-PROBLEM","formula":"PAS+","hooktext":"[ON-SCREEN] I had over $40,000 in credit card debt![ON-SCREEN] THEN[ON-SCREEN] NOW[ON-SCREEN] \u274c Scraping by with minimum payments[ON-SCREEN] \u2705 ONLY 1 low monthly payment[ON-SCREEN] \u274c Drained savings[ON-SCREEN] \u2705 No loans required[ON-SCREEN] \u274c Feeling all alone"},{"short":"J571V1B","name":"J571V1B_Staticts_Adapt2_SW3Infomercial-Static-Handwritten_03/17/2025_6670381130705","role":"Best static \u2014 handwritten note","role_class":"win","url":"https://datateam-ts-assets.s3.amazonaws.com/image_history/485342304981701/6670381130705.jpg","mtype":"image","tm":36594.0,"mpu":642.0,"mpu26":null,"closes":57,"cr":6.26,"cpa":1476.0,"abi":20989.0,"spend":84106.0,"hook":"Curiosity-Gap","voice":"V-NO-VOICE","motiv":"M-PROBLEM","formula":"OAS+","hooktext":"[ON-SCREEN] How I said Goodbye to Debt[ON-SCREEN] I thought I could scrape by making minimum payments each month[ON-SCREEN] Freedom Debt Relief solved my problems with one monthly payment. I ended up paying less each month AND reducing my debt faster than maki"},{"short":"J602V1D","name":"J602V1D_Videots_Adapt3_SW3Infomercial-StaticBouquet_040425_6700489647505","role":"Highest-MPU maker (+1,396)","role_class":"win","url":"https://datateam-ts-assets.s3.amazonaws.com/image_history/485342304981701/a_6845476646305.jpg","mtype":"video","tm":36296.0,"mpu":1396.0,"mpu26":null,"closes":26,"cr":9.77,"cpa":1134.0,"abi":24422.0,"spend":29488.0,"hook":"Before-After","voice":"V-NO-VOICE","motiv":"M-PROBLEM","formula":"PS","hooktext":"[ON-SCREEN] freedom DEBT RELIEF[ON-SCREEN] Struggling with $40,000 in Credit Card Debt?[ON-SCREEN] Before Freedom Debt Relief[ON-SCREEN] 3+ Monthly Payments[ON-SCREEN] Struggling with Minimum Payments[ON-SCREEN] Drained Savings[ON-SCREEN] With freedom DEBT REL"},{"short":"J641V1B","name":"J641V1B_Staticts_New_SW3Infomercial-Static-AICartoonImages_070225_6800740381905","role":"Cartoon static \u2014 replicated 2026 winner","role_class":"win","url":"https://datateam-ts-assets.s3.amazonaws.com/image_history/485342304981701/a_6860489605305.jpg","mtype":"image","tm":26925.0,"mpu":359.0,"mpu26":165,"closes":75,"cr":6.2,"cpa":1421.0,"abi":18288.0,"spend":106567.0,"hook":"Before-After","voice":"V-ACTOR","motiv":"M-PROBLEM","formula":"Static-Only","hooktext":"[ON-SCREEN] How I went from 3 credit card payments to one low monthly amount[ON-SCREEN] Paid advertisement, not an actual customer testimonial. Individual results will vary."},{"short":"J655V1B","name":"J655V1B_Videots_New_SW1DebtUGC-ViralDebtGirl_072425_ 6816572959705","role":"Sibling of a 2025 winner, \u2212$1,669/close","role_class":"loss","url":"https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6816572959705.mp4","mtype":"video","tm":-15021.0,"mpu":-1669.0,"mpu26":null,"closes":9,"cr":4.89,"cpa":2936.0,"abi":14939.0,"spend":26420.0,"hook":"UGC-Native","voice":"V-UGC-PEER","motiv":"M-PROBLEM","formula":"PAS&#43;","hooktext":"[SPOKEN] I am the girl that's going viral for having over $40,000 in credit card debt. [ON-SCREEN] I am the girl that's going viral for having over $40K in credit card debt [SPOKEN] Here's how it happened."},{"short":"J679V1C","name":"J679V1C_Videots_Adapt1_Bouquet-WoTSmash_091825_6842621786105","role":"Sibling family: B +814, D +1,093, C \u2212703","role_class":"loss","url":"https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6842621786105.mp4","mtype":"video","tm":-10545.0,"mpu":-703.0,"mpu26":null,"closes":15,"cr":5.62,"cpa":2455.0,"abi":18352.0,"spend":36827.0,"hook":"Before-After","voice":"V-BRAND","motiv":"M-PROBLEM","formula":"PAS-","hooktext":"[ON-SCREEN] They were drowning in credit card debt until Freedom Debt Relief gave them a path to being debt-free by reducing what they owed for one low monthly amount[ON-SCREEN] Being in debt can cause Delayed life goals[ON-SCREEN] Being in debt can cause Extr"}]};
+const DATA = {"cohorts":{"hook":[{"label":"Before-After","ads":14,"closes":787,"spend":1108011.0,"wmpu":729.9034307496823,"tm":574434.0,"cr":7.2823170167484035,"wmpu_ex":540.8768115942029},{"label":"Contrast-Reveal","ads":3,"closes":197,"spend":367677.0,"wmpu":618.8071065989848,"tm":121905.0,"cr":5.376637554585153,"wmpu_ex":618.8071065989848},{"label":"UGC-Native","ads":7,"closes":174,"spend":333204.0,"wmpu":580.7011494252873,"tm":101042.0,"cr":6.507105459985041,"wmpu_ex":580.7011494252873},{"label":"Curiosity-Gap","ads":20,"closes":368,"spend":608081.0,"wmpu":472.14402173913044,"tm":173749.0,"cr":6.504065040650407,"wmpu_ex":472.14402173913044},{"label":"Testimonial-Lead","ads":5,"closes":216,"spend":482322.0,"wmpu":171.20833333333334,"tm":36981.0,"cr":5.2734375,"wmpu_ex":171.20833333333334}],"voice":[{"label":"No Voiceover (text / GFX-led)","ads":9,"closes":147,"spend":210623.0,"wmpu":692.2380952380952,"tm":101759.0,"cr":7.577319587628866,"wmpu_ex":692.2380952380952},{"label":"UGC Peer Creator","ads":17,"closes":928,"spend":1441868.0,"wmpu":689.2855603448276,"tm":639657.0,"cr":7.031368389149871,"wmpu_ex":514.4004796163069},{"label":"Brand Voice","ads":3,"closes":120,"spend":207724.0,"wmpu":561.25,"tm":67350.0,"cr":6.185567010309279,"wmpu_ex":561.25},{"label":"Real Customer / Graduate","ads":3,"closes":220,"spend":485598.0,"wmpu":408.6090909090909,"tm":89894.0,"cr":5.056308894507009,"wmpu_ex":408.6090909090909},{"label":"Actor Read","ads":18,"closes":298,"spend":500956.0,"wmpu":251.44630872483222,"tm":74931.0,"cr":6.091578086672118,"wmpu_ex":251.44630872483222}],"motivator":[{"label":"Outcome / Relief framing","ads":3,"closes":605,"spend":816657.0,"wmpu":815.8942148760331,"tm":493616.0,"cr":7.794382891007472,"wmpu_ex":728.3404255319149},{"label":"Problem / Pain framing","ads":48,"closes":1159,"spend":2111680.0,"wmpu":449.7713546160483,"tm":521285.0,"cr":5.998654313958904,"wmpu_ex":449.7713546160483}],"formula":[{"label":"Problem\u2013Solution (PS)","ads":6,"closes":63,"spend":95069.0,"wmpu":828.5079365079365,"tm":52196.0,"cr":7.420494699646643,"wmpu_ex":828.5079365079365},{"label":"Outcome Story (OS)","ads":12,"closes":808,"spend":1168313.0,"wmpu":715.6101485148515,"tm":578213.0,"cr":7.4094452086199,"wmpu_ex":515.3569023569023},{"label":"Problem-Agitate-Solve (PAS+)","ads":18,"closes":616,"spend":1199367.0,"wmpu":468.1038961038961,"tm":288352.0,"cr":5.676896138604737,"wmpu_ex":468.1038961038961},{"label":"Outcome-Agitate-Solve (OAS+)","ads":8,"closes":123,"spend":204772.0,"wmpu":397.5040650406504,"tm":48893.0,"cr":5.913461538461538,"wmpu_ex":397.5040650406504},{"label":"Static-Only","ads":4,"closes":113,"spend":182936.0,"wmpu":328.12389380530976,"tm":37078.0,"cr":6.558328496807893,"wmpu_ex":328.12389380530976}],"offer":[{"label":"Straight product offer","ads":43,"closes":1567,"spend":2491249.0,"wmpu":636.0835992342055,"tm":996743.0,"cr":6.756348898374509,"wmpu_ex":541.279356060606},{"label":"Quiz / calculator-led","ads":8,"closes":197,"spend":437088.0,"wmpu":92.1725888324873,"tm":18158.0,"cr":5.06426735218509,"wmpu_ex":92.1725888324873}],"type":[{"label":"Video","ads":38,"closes":1488,"spend":2489931.0,"wmpu":609.7728494623656,"tm":907342.0,"cr":6.460296096904441,"wmpu_ex":493.54145342886386},{"label":"Static","ads":13,"closes":276,"spend":438406.0,"wmpu":389.70652173913044,"tm":107559.0,"cr":6.814814814814815,"wmpu_ex":389.70652173913044}],"anchor":[{"label":"mid ($15-30k)","ads":4,"closes":44,"spend":76643.0,"wmpu":723.2727272727273,"tm":31824.0,"cr":6.727828746177369,"wmpu_ex":723.2727272727273},{"label":"none","ads":17,"closes":786,"spend":1101275.0,"wmpu":631.1145038167939,"tm":496056.0,"cr":7.268355835028667,"wmpu_ex":257.83272727272725},{"label":"high ($30k+)","ads":30,"closes":934,"spend":1750419.0,"wmpu":521.4357601713062,"tm":487021.0,"cr":5.981428113992956,"wmpu_ex":521.4357601713062}]},"sig_tests":[{"obs":558.695097416349,"ci":[100.53154478054056,718.5877471021435],"p":0.015,"name":"Before-After hook vs Testimonial-Lead hook"},{"obs":437.83925161999537,"ci":[-44.442631794650524,774.291881625532],"p":0.0745,"name":"UGC peer creator vs actor read"},{"obs":278.5690709158666,"ci":[111.5285180684181,494.7594830358137],"p":0.0005,"name":"Outcome framing vs problem framing (ex-J521)"},{"obs":543.9110104017182,"ci":[238.0319042341808,1121.9829815075168],"p":0.003,"name":"Straight product offer vs quiz/calculator-led"},{"obs":220.06632772323513,"ci":[-126.00298539015824,474.848275795852],"p":0.223,"name":"Video vs static"},{"obs":263.603032898579,"ci":[-5.910006406407714,609.3996761269758],"p":0.056,"name":"High on-screen debt anchor ($30k+) vs no anchor (ex-J521)"}],"media":{"rows":[{"label":"CPM (cost per 1,000 impressions)","v25":"$30.85","v26":"$38.78","chg":"+26%","dir":"bad"},{"label":"Link CTR","v25":"0.52%","v26":"0.63%","chg":"+20%","dir":"good"},{"label":"Meta leads per link click","v25":"3.2%","v26":"4.0%","chg":"+24%","dir":"good"},{"label":"Meta-measured cost per lead","v25":"$184","v26":"$156","chg":"\u221215%","dir":"good"},{"label":"Backend cost per lead (Sam)","v25":"$113","v26":"$127","chg":"+12%","dir":"bad"},{"label":"Backend close rate","v25":"6.2%","v26":"6.1%","chg":"flat","dir":"flat"},{"label":"Enrolled debt per close (implied)","v25":"~$24.2k","v26":"~$22.5k","chg":"\u22127%","dir":"bad"}],"setup":["All 8 delivering ad sets target ages 18\u201365 broad \u2014 no age skew, even though margin concentrates 45+","Optimization: offsite conversions against a lead-quality (LQS) event, mostly cost caps \u2014 quality-weighted bidding is already in place","Attribution: 1-day click only","Heavy bad-lead exclusions already running (SF/LF Bad 90, LF Unqualified 0\u20131yr, 4-yr enrollment lookback)","Advantage+ audience ON in part of the account \u2014 delivery can drift young/broad where margin is thinnest"]},"kpis":{"tm25":1125366.0,"closes25":2075,"n_ads25":616,"n_sig":51,"j521_share25":37.77899812150003},"drivers":[{"label":"CPA (cost per close)","r25":-0.5256563775702583},{"label":"Close rate","r25":0.36232698775141226},{"label":"ABI (enrolled debt)","r25":0.5116646937518419},{"label":"Household income","r25":0.2388645434361869},{"label":"CPL (cost per lead)","r25":-0.16246294809362605},{"label":"FICO","r25":0.048016084580292044},{"label":"Card utilization","r25":0.02269985648722873}],"yoy":{"rows":[{"label":"Net creative margin","v25":"+$1.13M","v26":"+$82k"},{"label":"Margin per close (MPU)","v25":"$542","v26":"$89"},{"label":"Closes (enrollments)","v25":"2,075","v26":"918 (\u22485 mo)"},{"label":"CPA (cost per close)","v25":"$1,820","v26":"$2,100"},{"label":"Backend CPL","v25":"$113","v26":"$127"},{"label":"Blended close rate","v25":"6.2%","v26":"6.1%"},{"label":"Enrolled debt per close (implied)","v25":"~$24.2k","v26":"~$22.5k"}],"shared":[{"v":"J521V1B","mpu25":832.0,"mpu26":350},{"v":"J679V1D","mpu25":1093.0,"mpu26":157},{"v":"J568V1D","mpu25":775.0,"mpu26":274},{"v":"J641V1B","mpu25":359.0,"mpu26":165},{"v":"J655V1A","mpu25":808.0,"mpu26":-757},{"v":"J686V1B","mpu25":124.0,"mpu26":37}]},"age_test":{"r_2025":-0.012499497582702355,"n_2025":15,"r_2026":0.3739476989212927,"n_2026":11,"panel26":[{"v":"J716V1C","share45":0.5,"mpu26":-377.0},{"v":"J742V1D","share45":0.53,"mpu26":-715.0},{"v":"J679V1D","share45":0.58,"mpu26":157.0},{"v":"J338V1B","share45":0.59,"mpu26":497.0},{"v":"J568V1D","share45":0.68,"mpu26":274.0},{"v":"J641V1B","share45":0.68,"mpu26":165.0},{"v":"J521V1B","share45":0.68,"mpu26":350.0},{"v":"J655V1A","share45":0.69,"mpu26":-757.0},{"v":"J753V1D","share45":0.76,"mpu26":167.0},{"v":"J686V1B","share45":0.79,"mpu26":37.0},{"v":"J711V1C","share45":0.79,"mpu26":324.0}]},"noise_families":[{"job":"J521","variants":[{"v":"J521V1D","mpu":1863.0,"closes":6},{"v":"J521V1B","mpu":832.0,"closes":511},{"v":"J521V1A","mpu":-68.0,"closes":12},{"v":"J521V1C","mpu":-385.0,"closes":21}]},{"job":"J547","variants":[{"v":"J547V1B","mpu":1756.0,"closes":14},{"v":"J547V1A","mpu":-377.0,"closes":15}]},{"job":"J545","variants":[{"v":"J545V1A","mpu":1604.0,"closes":14},{"v":"J545V1B","mpu":1541.0,"closes":5},{"v":"J545V1D","mpu":192.0,"closes":134}]},{"job":"J602","variants":[{"v":"J602V1D","mpu":1396.0,"closes":26},{"v":"J602V1C","mpu":559.0,"closes":11},{"v":"J602V1B","mpu":-296.0,"closes":12}]},{"job":"J680","variants":[{"v":"J680V1A","mpu":1299.0,"closes":13},{"v":"J680V1B","mpu":135.0,"closes":14}]},{"job":"J679","variants":[{"v":"J679V1D","mpu":1093.0,"closes":20},{"v":"J679V1B","mpu":814.0,"closes":28},{"v":"J679V1C","mpu":-703.0,"closes":15}]},{"job":"J694","variants":[{"v":"J694V1C","mpu":1003.0,"closes":8},{"v":"J694V1B","mpu":-139.0,"closes":12}]},{"job":"J613","variants":[{"v":"J613V1D","mpu":966.0,"closes":88},{"v":"J613V1C","mpu":641.0,"closes":66},{"v":"J613V1A","mpu":-562.0,"closes":5}]},{"job":"J655","variants":[{"v":"J655V1A","mpu":808.0,"closes":85},{"v":"J655V1B","mpu":-1669.0,"closes":9}]},{"job":"J568","variants":[{"v":"J568V1D","mpu":775.0,"closes":102},{"v":"J568V1C","mpu":-2171.0,"closes":10}]}],"noise_stats":{"median_family_range":1692.0,"cohort_std":838.6052220391742,"n_families":11},"leaders":[{"label":"J521V1B","tm":425152.0},{"label":"J613V1D","tm":85008.0},{"label":"J568V1D","tm":79050.0},{"label":"J655V1A","tm":68680.0},{"label":"J599V1D","tm":45672.0},{"label":"J613V1C","tm":42306.0},{"label":"J590V1A","tm":41310.0},{"label":"J571V1B","tm":36594.0},{"label":"J602V1D","tm":36296.0},{"label":"J551V1D","tm":32480.0},{"label":"J641V1B","tm":26925.0},{"label":"J545V1D","tm":25728.0},{"label":"J568V1C","tm":-21710.0},{"label":"J655V1B","tm":-15021.0},{"label":"J679V1C","tm":-10545.0},{"label":"J546V1D","tm":-8889.0},{"label":"J521V1C","tm":-8085.0},{"label":"J662V1A","tm":-6774.0}],"anchor":{"n":34,"r_fico":-0.13510377759439687,"r_util":0.11511081598202864,"r_abi":-0.12253682365351165,"r_mpu":-0.04149800096902727},"cards":[{"short":"J521V1B","name":"J521V1B_Videots_More3_SW1DebtUGC-Kellen-Refresh_091824_6608991096305","role":"ENGINE \u2014 38% of 2025 net margin","role_class":"engine","url":"https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6850799642105.mp4","mtype":"video","tm":425152.0,"mpu":832.0,"mpu26":350,"closes":511,"cpa":1300.0,"spend":664507.0,"pills":["Before-After","UGC Peer Creator","Outcome / Relief","OS"],"hooktext":"[SPOKEN] Here's how I went from paying off three different credit cards to just one low monthly amount. [ON-SCREEN] How I went from 3 credit card payments to 1 low monthly amount [ON-SCREEN] Paid advertisement, not a real customer testimonial."},{"short":"J613V1D","name":"J613V1D_Videots_More1_SW3Infomercial-MessagingUpdate-HeaderBlur-Applovin_050725_6749428589705","role":"Top-5 maker \u2014 infomercial WoT","role_class":"win","url":"https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6850799642905.mp4","mtype":"video","tm":85008.0,"mpu":966.0,"mpu26":null,"closes":88,"cpa":1698.0,"spend":149465.0,"pills":["Curiosity-Gap","UGC Peer Creator","Problem / Pain","OS"],"hooktext":"[ON-SCREEN] Guess how he got rid of $43,512 of credit card debt [ON-SCREEN] freedom [ON-SCREEN] Freedom Debt Relief helped me [SPOKEN] Freedom helped me for just one low monthly payment. [ON-SCREEN] for just one low monthly payment [ON-SCREEN] Paid advertiseme"},{"short":"J568V1D","name":"J568V1D_Videots_Adapt3_SW3Infomercial-ThemvsUs_01292025_6627338658505","role":"Top-5 maker \u2014 VS split-screen","role_class":"win","url":"https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6850799643105.mp4","mtype":"video","tm":79050.0,"mpu":775.0,"mpu26":274,"closes":102,"cpa":1626.0,"spend":165902.0,"pills":["Contrast-Reveal","Brand Voice","Problem / Pain","PAS+"],"hooktext":"[ON-SCREEN] $40,000+ in credit card debt[ON-SCREEN] VS[ON-SCREEN] Freedom Debt Relief[ON-SCREEN] Drained savings[ON-SCREEN] 1 low monthly payment[ON-SCREEN] Extreme stress[ON-SCREEN] No upfront costs[ON-SCREEN] Strained relationships[ON-SCREEN] No loans requir"},{"short":"J655V1A","name":"J655V1A_Videots_New_SW1DebtUGC-ViralDebtGirl_072425_ 6816572959905","role":"+$69k in 2025 \u2192 \u2212$11k in 2026","role_class":"win","url":"https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6816572959905.mp4","mtype":"video","tm":68680.0,"mpu":808.0,"mpu26":-757,"closes":85,"cpa":2052.0,"spend":174447.0,"pills":["UGC-Native","UGC Peer Creator","Problem / Pain","PAS+"],"hooktext":"[SPOKEN] I am the girl that's going viral for having over $40,000 in credit card debt. [ON-SCREEN] I am the girl that's going viral for having over $40K in credit card debt [SPOKEN] Here's how it happened."},{"short":"J599V1D","name":"J599V1D_Videots_Adapt3_SW3Infomercial-ShortForm-WOT-HappyResults_07/17/2025_6810692184305","role":"Top-10 maker \u2014 short-form WoT","role_class":"win","url":"https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6845475018505.mp4","mtype":"video","tm":45672.0,"mpu":692.0,"mpu26":null,"closes":66,"cpa":1737.0,"spend":114663.0,"pills":["UGC-Native","Actor Read","Outcome / Relief","OS"],"hooktext":"[ON-SCREEN] POV: You just resolved over $40,000 in credit card debt because Freedom Debt Relief negotiated your debt down with one low monthly payment [ON-SCREEN] Paid advertisement, not an actual customer testimonial, individual results will vary [ON-SCREEN] "},{"short":"J590V1A","name":"J590V1A_Videots_Adapt2_SW3Infomercial-ThenNowWoT_03122025_6667286334705","role":"Top-10 maker \u2014 Then/Now WoT","role_class":"win","url":"https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6860489605505.mp4","mtype":"video","tm":41310.0,"mpu":810.0,"mpu26":null,"closes":51,"cpa":1599.0,"spend":81568.0,"pills":["Before-After","Problem / Pain","PAS+"],"hooktext":"[ON-SCREEN] I had over $40,000 in credit card debt![ON-SCREEN] THEN[ON-SCREEN] NOW[ON-SCREEN] \u274c Scraping by with minimum payments[ON-SCREEN] \u2705 ONLY 1 low monthly payment[ON-SCREEN] \u274c Drained savings[ON-SCREEN] \u2705 No loans required[ON-SCREEN] \u274c Feeling all alone"},{"short":"J571V1B","name":"J571V1B_Staticts_Adapt2_SW3Infomercial-Static-Handwritten_03/17/2025_6670381130705","role":"Best static \u2014 handwritten note","role_class":"win","url":"https://datateam-ts-assets.s3.amazonaws.com/image_history/485342304981701/6670381130705.jpg","mtype":"image","tm":36594.0,"mpu":642.0,"mpu26":null,"closes":57,"cpa":1476.0,"spend":84106.0,"pills":["Curiosity-Gap","No Voiceover (text / GFX-led)","Problem / Pain","OAS+"],"hooktext":"[ON-SCREEN] How I said Goodbye to Debt[ON-SCREEN] I thought I could scrape by making minimum payments each month[ON-SCREEN] Freedom Debt Relief solved my problems with one monthly payment. I ended up paying less each month AND reducing my debt faster than maki"},{"short":"J602V1D","name":"J602V1D_Videots_Adapt3_SW3Infomercial-StaticBouquet_040425_6700489647505","role":"Highest-MPU maker (+$1,396/close)","role_class":"win","url":"https://datateam-ts-assets.s3.amazonaws.com/image_history/485342304981701/a_6845476646305.jpg","mtype":"video","tm":36296.0,"mpu":1396.0,"mpu26":null,"closes":26,"cpa":1134.0,"spend":29488.0,"pills":["Before-After","No Voiceover (text / GFX-led)","Problem / Pain","PS"],"hooktext":"[ON-SCREEN] freedom DEBT RELIEF[ON-SCREEN] Struggling with $40,000 in Credit Card Debt?[ON-SCREEN] Before Freedom Debt Relief[ON-SCREEN] 3+ Monthly Payments[ON-SCREEN] Struggling with Minimum Payments[ON-SCREEN] Drained Savings[ON-SCREEN] With freedom DEBT REL"},{"short":"J641V1B","name":"J641V1B_Staticts_New_SW3Infomercial-Static-AICartoonImages_070225_6800740381905","role":"Cartoon static \u2014 also profitable in 2026","role_class":"win","url":"https://datateam-ts-assets.s3.amazonaws.com/image_history/485342304981701/a_6860489605305.jpg","mtype":"image","tm":26925.0,"mpu":359.0,"mpu26":165,"closes":75,"cpa":1421.0,"spend":106567.0,"pills":["Before-After","Actor Read","Problem / Pain","Static-Only"],"hooktext":"[ON-SCREEN] How I went from 3 credit card payments to one low monthly amount[ON-SCREEN] Paid advertisement, not an actual customer testimonial. Individual results will vary."},{"short":"J655V1B","name":"J655V1B_Videots_New_SW1DebtUGC-ViralDebtGirl_072425_ 6816572959705","role":"Sibling of a 2025 winner, \u2212$1,669/close","role_class":"loss","url":"https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6816572959705.mp4","mtype":"video","tm":-15021.0,"mpu":-1669.0,"mpu26":null,"closes":9,"cpa":2936.0,"spend":26420.0,"pills":["UGC-Native","UGC Peer Creator","Problem / Pain","PAS+"],"hooktext":"[SPOKEN] I am the girl that's going viral for having over $40,000 in credit card debt. [ON-SCREEN] I am the girl that's going viral for having over $40K in credit card debt [SPOKEN] Here's how it happened."},{"short":"J679V1C","name":"J679V1C_Videots_Adapt1_Bouquet-WoTSmash_091825_6842621786105","role":"Family noise: B +814, D +1,093, C \u2212703","role_class":"loss","url":"https://datateam-ts-assets.s3.amazonaws.com/video_history/485342304981701/a_6842621786105.mp4","mtype":"video","tm":-10545.0,"mpu":-703.0,"mpu26":null,"closes":15,"cpa":2455.0,"spend":36827.0,"pills":["Before-After","Brand Voice","Problem / Pain","PAS-"],"hooktext":"[ON-SCREEN] They were drowning in credit card debt until Freedom Debt Relief gave them a path to being debt-free by reducing what they owed for one low monthly amount[ON-SCREEN] Being in debt can cause Delayed life goals[ON-SCREEN] Being in debt can cause Extr"}]};
 const HASH = '2e5976b0a833bf4f7a0d13662ed976afd3b22c3e33de630fa52cf47c67d4a956';
 async function tryUnlock(){
   const pw=document.getElementById('pw').value;
@@ -364,9 +369,11 @@ async function tryUnlock(){
 }
 document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')tryUnlock();});
 
-const POS='#1E9E6A', NEG='#C0392B', MUT='#9AA7AB', ACC='#16A6A6', DEEP='#0E7C8B', GREY='#B6C2C6';
+const POS='#1E9E6A', NEG='#C0392B', MUT='#9AA7AB', ACC='#16A6A6', GREY='#B6C2C6';
 const fmtUSD=v=>(v<0?'-$':'$')+Math.abs(Math.round(v)).toLocaleString();
-const fmtUSDk=v=>(v<0?'-$':'$')+Math.abs(Math.round(v/100)/10)+'k';
+const fmtUSDk=v=>{const a=Math.abs(v);const s=v<0?'-$':'$';
+  if(a>=1e6)return s+(a/1e6).toFixed(2)+'M';
+  return s+Math.round(a/100)/10+'k';};
 const fmtSign=v=>(v>=0?'+':'−')+'$'+Math.abs(Math.round(v)).toLocaleString();
 
 const valLab=(fmt)=>({id:'vl',afterDatasetsDraw(c){const{ctx}=c;ctx.save();ctx.font='700 11px Inter';
@@ -385,7 +392,7 @@ function hbar(id,labels,vals,fmt,colorByVal,zeroThresh){
       scales:{x:{grid:{color:'#EEF2F3'},ticks:{callback:fmt},grace:'14%'},y:{grid:{display:false},ticks:{font:{size:12,weight:'600'}}}}},
     plugins:[valLab(fmt)]});
 }
-function ghbar(id,labels,d1,d2,l1,l2,fmt,h){
+function ghbar(id,labels,d1,d2,l1,l2,fmt){
   new Chart(document.getElementById(id),{type:'bar',
     data:{labels,datasets:[
       {label:l1,data:d1,backgroundColor:d1.map(v=>v>=0?POS:NEG),borderRadius:4,barPercentage:.85,categoryPercentage:.72},
@@ -402,11 +409,11 @@ function initApp(){
   if(booted)return; booted=true;
   const k=DATA.kpis;
   const kpis=[
-    {l:'2025 net margin',v:fmtUSDk(k.tm25),c:'pos',s:k.n_ads25+' variants · '+k.closes25.toLocaleString()+' closes'},
-    {l:'Margin per close, 2025 → 2026',v:'$542 → $89',c:'neg',s:'−84% account-wide'},
-    {l:'J521V1B share of net',v:Math.round(k.j521_share25)+'%',c:'acc',s:'was 71% of 2026 YTD — de-biased'},
+    {l:'2025 net creative margin',v:fmtUSDk(k.tm25),c:'pos',s:k.n_ads25+' variants · '+k.closes25.toLocaleString()+' closes'},
+    {l:'Margin per close, 2025 → 2026',v:'$542 → $89',c:'neg',s:'−84%, on the same ads'},
+    {l:'Creative levers at p < 0.05',v:'3',c:'acc',s:'framing · offer mechanic · hook'},
     {l:'Ads re-watched & classified',v:'130',s:'83% of 2025 spend · 0 failures'},
-    {l:'Signal cohort',v:k.n_sig+' ads',s:'≥5 closes · 85% of spend'},
+    {l:'Top ad share of net margin',v:Math.round(k.j521_share25)+'%',s:'every finding checked without it'},
   ];
   document.getElementById('kpiRow').replaceChildren(...kpis.map(o=>{
     const c=document.createElement('div');c.className='kpi-card';
@@ -415,62 +422,63 @@ function initApp(){
     const s=document.createElement('div');s.className='kpi-sub';s.textContent=o.s;
     c.append(l,v,s);return c;}));
 
-  // YoY table
+  // drivers
+  const dr=DATA.drivers;
+  hbar('cDrivers',dr.map(d=>d.label),dr.map(d=>+d.r25.toFixed(2)),v=>v.toFixed(2),true,0.08);
+
+  // yoy
   document.getElementById('yoyBody').replaceChildren(...DATA.yoy.rows.map(r=>{
     const tr=document.createElement('tr');
     const c1=document.createElement('td');c1.textContent=r.label;c1.style.fontWeight='600';
     const c2=document.createElement('td');c2.className='num';c2.textContent=r.v25;
     const c3=document.createElement('td');c3.className='num';c3.textContent=r.v26;
     tr.append(c1,c2,c3);return tr;}));
-
-  // shared variants chart
   const sh=DATA.yoy.shared;
-  ghbar('cShared',sh.map(d=>d.v),sh.map(d=>d.mpu25),sh.map(d=>d.mpu26),'2025 MPU','2026 MPU',fmtSign);
+  ghbar('cShared',sh.map(d=>d.v),sh.map(d=>d.mpu25),sh.map(d=>d.mpu26),'2025','2026 YTD',fmtSign);
 
-  // scoreboard
-  const SCORE=[
-    ['CPA is the #1 MPU driver','r = −0.72','r = −0.53 (−0.68 at ≥10 closes); ex-J521 −0.52','rep','Replicates'],
-    ['Close rate tracks MPU','r = +0.62','r = +0.36 (+0.65 at ≥10 closes)','rep','Replicates'],
-    ['Before-After hooks win / Testimonial-Lead loses','+$225 / −$216','+$730 (787 cl) / +$171 — best & worst again','rep','Replicates'],
-    ['Peer-creator voice wins / actor reads weakest','+$220 / +$14','+$689 (928 cl) / +$251 — same order','rep','Replicates'],
-    ['Outcome > problem framing (was "J521 artifact, T3")','+$267 vs +$65, all from J521','+$816 vs +$450; ex-J521 +$728 vs +$450','up','Upgraded'],
-    ['ABI / debt size doesn’t move MPU','r = −0.003','r = +0.51 — debt size pays','fail','Did not replicate'],
-    ['The on-screen debt anchor IS the targeting','anchor↔FICO +0.60 (n=14)','anchor↔FICO −0.14, ↔MPU −0.04 (n=34)','fail','Did not replicate'],
-    ['Cheap CPL is a trap (closes worse, loses money)','4.7% vs 7.6% close; −$8k','6.7% vs 6.2% close; +$748k vs +$344k','fail','Did not replicate'],
-    ['Statics are net-negative','−$118/close, −$19k','+$390/close, +$104k (video still 1.6× better)','part','Partial'],
-    ['Utilization 67–73% is the dividing line','winners 67–71, losers 75–90','flat: $600 / $593 / $467 / $726 across bands','fail','Did not replicate'],
-    ['The account is one ad deep','J521 = 71% of net','J521 = 38%, top-5 = 63% — concentrated, not solitary','part','Partial'],
-  ];
-  document.getElementById('scoreBody').replaceChildren(...SCORE.map(r=>{
+  // media
+  document.getElementById('mediaBody').replaceChildren(...DATA.media.rows.map(r=>{
     const tr=document.createElement('tr');
-    const c1=document.createElement('td');c1.textContent=r[0];c1.style.fontWeight='600';
-    const c2=document.createElement('td');c2.textContent=r[1];c2.style.color='var(--muted)';c2.style.fontSize='13px';
-    const c3=document.createElement('td');c3.textContent=r[2];c3.style.fontSize='13px';
-    const c4=document.createElement('td');const sp=document.createElement('span');sp.className='verdict v-'+r[3];sp.textContent=r[4];c4.appendChild(sp);
+    const c1=document.createElement('td');c1.textContent=r.label;c1.style.fontWeight='600';
+    const c2=document.createElement('td');c2.className='num';c2.textContent=r.v25;
+    const c3=document.createElement('td');c3.className='num';c3.textContent=r.v26;
+    const c4=document.createElement('td');c4.className='num '+(r.dir==='bad'?'neg':r.dir==='good'?'pos':'');c4.textContent=r.chg;
+    tr.append(c1,c2,c3,c4);return tr;}));
+  document.getElementById('setupList').replaceChildren(...DATA.media.setup.map(s=>{
+    const li=document.createElement('li');li.textContent=s;return li;}));
+
+  // significance table
+  document.getElementById('sigBody').replaceChildren(...DATA.sig_tests.map(t=>{
+    const tr=document.createElement('tr');
+    const c1=document.createElement('td');c1.textContent=t.name;c1.style.fontWeight='600';
+    const c2=document.createElement('td');c2.className='num '+(t.obs>=0?'pos':'neg');c2.textContent=fmtSign(t.obs);
+    const c3=document.createElement('td');c3.className='num';c3.textContent=fmtSign(t.ci[0])+' … '+fmtSign(t.ci[1]);
+    const c4=document.createElement('td');const sp=document.createElement('span');
+    const cls=t.p<0.05?'s-sig':(t.p<0.10?'s-dir':'s-ns');
+    sp.className='sigtag '+cls;
+    sp.textContent=t.p<0.05?('Significant (p='+t.p.toFixed(3)+')'):(t.p<0.10?('Directional (p='+t.p.toFixed(2)+')'):('Not significant (p='+t.p.toFixed(2)+')'));
+    c4.appendChild(sp);
     tr.append(c1,c2,c3,c4);return tr;}));
 
-  // drivers
-  const dr=DATA.drivers;
-  ghbar('cDrivers',dr.map(d=>d.label),dr.map(d=>+d.r25.toFixed(2)),dr.map(d=>+d.r26.toFixed(2)),'2025 FY (n=51)','2026 YTD (n=27)',v=>v.toFixed(2));
-
-  // cohort charts
+  // cohort charts: 2025 + ex-top-ad
   const co=DATA.cohorts;
-  const mk=(id,key,fmt)=>{const t=co[key];if(!t)return;
-    ghbar(id,t.map(r=>r.label+' ('+r.closes+' cl)'),t.map(r=>Math.round(r.wmpu)),t.map(r=>r.wmpu26===null||r.wmpu26===undefined?null:Math.round(r.wmpu26)),'2025','2026',fmtSign);};
-  mk('cHook','hook'); mk('cVoice','voice'); mk('cFormula','formula');
-  const mo=co.motivator;
-  hbar('cMotiv',mo.map(r=>(r.label==='M-OUTCOME'?'Outcome / relief':'Problem / pain')+' ('+r.ads+' ads, '+r.closes+' cl)'),mo.map(r=>Math.round(r.wmpu)),fmtSign,true,1);
-  const of=co.offer;
-  hbar('cOffer',of.map(r=>(r.label==='OT-QUIZ'?'Quiz / calculator-led':'Straight product offer')+' ('+r.closes+' cl)'),of.map(r=>Math.round(r.wmpu)),fmtSign,true,1);
-  mk('cType','type');
+  const mk=(id,key)=>{const t=co[key];if(!t)return;
+    ghbar(id,t.map(r=>r.label+' ('+r.closes+' cl)'),
+      t.map(r=>Math.round(r.wmpu)),
+      t.map(r=>r.wmpu_ex===null||r.wmpu_ex===undefined?null:Math.round(r.wmpu_ex)),
+      '2025 (all ads)','excl. top ad',fmtSign);};
+  mk('cMotiv','motivator'); mk('cOffer','offer'); mk('cHook','hook');
+  mk('cVoice','voice'); mk('cFormula','formula'); mk('cType','type');
 
   // anchor
-  const an=DATA.anchor, a26=an.r26;
-  ghbar('cAnchor',['→ FICO','→ Utilization','→ ABI (debt)','→ MPU'],
-    [+an.r_fico.toFixed(2),+an.r_util.toFixed(2),+an.r_abi.toFixed(2),+an.r_mpu.toFixed(2)],
-    [a26.r_fico,a26.r_util,a26.r_abi,a26.r_mpu],'2025 (n=34)','2026 claim (n=14)',v=>v.toFixed(2));
-  const ab=DATA.cohorts.anchor;
-  hbar('cAnchorBand',ab.map(r=>r.label+' ('+r.closes+' cl)'),ab.map(r=>Math.round(r.wmpu)),fmtSign,true,1);
+  const an=DATA.anchor;
+  hbar('cAnchor',['→ Lead FICO','→ Card utilization','→ Enrolled debt (ABI)','→ Margin (MPU)'],
+    [+an.r_fico.toFixed(2),+an.r_util.toFixed(2),+an.r_abi.toFixed(2),+an.r_mpu.toFixed(2)],v=>v.toFixed(2),true,0.2);
+  const ab=co.anchor;
+  ghbar('cAnchorBand',ab.map(r=>r.label+' ('+r.closes+' cl)'),
+    ab.map(r=>Math.round(r.wmpu)),
+    ab.map(r=>r.wmpu_ex===null||r.wmpu_ex===undefined?null:Math.round(r.wmpu_ex)),
+    '2025 (all ads)','excl. top ad',fmtSign);
 
   // noise
   const ns=DATA.noise_stats;
@@ -484,18 +492,6 @@ function initApp(){
       s.textContent=v.v.replace(f.job,'')+' '+fmtSign(v.mpu)+' ';
       const sm=document.createElement('small');sm.textContent='('+v.closes+' cl)';s.appendChild(sm);d.appendChild(s);});
     return d;}));
-
-  // age
-  const ag=DATA.age_test;
-  hbar('cAge',ag.panel26.map(d=>d.v+' · '+Math.round(d.share45*100)+'% to 45+'),ag.panel26.map(d=>d.mpu26),fmtSign,true,1);
-  document.getElementById('ageBody').replaceChildren(...[
-    ['2025 MPU vs 45+ share (matched variants)',ag.r_2025,ag.n_2025],
-    ['2026 MPU vs 45+ share',ag.r_2026,ag.n_2026]].map(r=>{
-    const tr=document.createElement('tr');
-    const c1=document.createElement('td');c1.textContent=r[0];
-    const c2=document.createElement('td');c2.className='num';c2.textContent=(r[1]>=0?'+':'')+r[1].toFixed(2);
-    const c3=document.createElement('td');c3.className='num';c3.textContent=r[2];
-    tr.append(c1,c2,c3);return tr;}));
 
   // leaders
   const ld=DATA.leaders;
@@ -529,7 +525,7 @@ function buildCards(){
     meta.appendChild(sg);
 
     const pills=document.createElement('div');pills.className='pills';
-    [ad.hook,ad.voice,ad.motiv,ad.formula].filter(Boolean).forEach(txt=>{const p=document.createElement('span');p.className='pill';p.textContent=txt;pills.appendChild(p);});
+    ad.pills.forEach(txt=>{const p=document.createElement('span');p.className='pill';p.textContent=txt;pills.appendChild(p);});
     meta.appendChild(pills);
 
     const hb=document.createElement('div');hb.className='hookbox';
